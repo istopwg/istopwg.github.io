@@ -21,26 +21,43 @@ a.button:hover {
 /* Header, footer, and navigation */
 .nav {
   background: rgba(24,24,20,.9);
+  font-size: 18px;
+  height: 30px;
+  line-height: 20px;
+  padding: 15px;
   position: fixed;
   top: 0px;
   width: 100%;
   z-index: 100;
 }
 
-.nav ul, .nav li {
+.nav ul {
+  display: inline;
+  margin: 0px;
+}
+
+.nav li {
   display: inline;
 }
 
 .nav a {
   color: #fff;
-  line-height: 30px;
-  padding: 2px 5px 4px;
+  padding: 7px 10px 10px;
   text-decoration: none;
 }
 
 .nav a:hover {
-  background: #fff;
-  color: #4b5aa8;
+  color: #b8c3ff;
+}
+
+.nav img {
+  border: thin solid #fff;
+  height: 27px;
+  vertical-align: middle;
+}
+
+.nav img:hover {
+  border: thin solid #b8c3ff;
 }
 
 .head {
