@@ -1,0 +1,383 @@
+/* Common Stuff */
+@import 'https://fonts.googleapis.com/css?family=Source+Code+Pro';
+
+code, kbd, p.command, p.summary, pre {
+  font-family: 'Source Code Pro', monospace;
+}
+
+a.button {
+  background: #4b5aa8;
+  border-radius: 12px;
+  color: #fff;
+  margin: 0px 5px;
+  padding: 8px 16px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+a.button:hover {
+  background: #262d54;
+}
+
+/* Header, footer, and navigation */
+.nav {
+  background: rgba(24,24,20,.9);
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav ul, .nav li {
+  display: inline;
+}
+
+.nav a {
+  color: #fff;
+  line-height: 30px;
+  padding: 2px 5px 4px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background: #fff;
+  color: #4b5aa8;
+}
+
+.head {
+  background: #181814;
+  background-image: linear-gradient(#181814, #4b5aa8);
+  padding: 50px 0px;
+  width: 100%;
+}
+
+.foot {
+  background: #181814;
+  background-image: linear-gradient(#4b5aa8, #181814);
+  padding: 15px 0px;
+  margin: 20px 0px 0px 0px;
+  width: 100%;
+  z-index: 100 !important;
+}
+
+.head h1, .head h2, .head p, .head a,
+.foot h1, .foot h2, .foot p, .foot a {
+  color: #fff;
+}
+
+.head a.button, .foot a.button {
+  background: #fff;
+  color: #4b5aa8;
+}
+.head a.button:hover, .foot a.button:hover {
+  background: #eee;
+}
+
+.mobile {
+  display: none;
+}
+.no-mobile {
+  display: inline;
+}
+
+/* API documentation styles... */
+kbd {
+  font-weight: bold;
+}
+
+pre.command {
+  border: dotted thin #7f7f7f;
+  margin-left: 36pt;
+  padding: 10px;
+}
+
+p.compact {
+  margin: 0;
+}
+
+p.example {
+  font-style: italic;
+  margin-left: 36pt;
+}
+
+dl.man dd {
+  margin-left: 5em;
+}
+
+dl.man dt {
+  margin-left: 0;
+}
+
+pre.man {
+  margin: 0;
+}
+
+pre.example {
+  background: #eeeeee;
+  border: dotted thin #999999;
+  margin-left: 36pt;
+  padding: 10pt;
+}
+
+p.command {
+  margin-left: 36pt;
+}
+
+p.formula {
+  font-style: italic;
+  margin-left: 36pt;
+}
+
+blockquote {
+  background: #eeeeee;
+  border: solid thin #999999;
+  padding: 10pt;
+}
+
+sub, sup {
+  font-size: 50%;
+}
+
+tr.data, td.data, tr.data td {
+  margin-top: 10pt;
+  padding: 5pt;
+  border-bottom: solid 1pt #999999;
+}
+
+tr.data th {
+  border-bottom: solid 1pt #999999;
+  padding-top: 10pt;
+  padding-left: 5pt;
+  text-align: left;
+}
+
+div.table table {
+  border: solid thin #999999;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.table caption {
+  caption-side: top;
+  font-size: 120%;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.table table td {
+  border: solid thin #cccccc;
+  padding-top: 5pt;
+}
+
+div.table table th {
+  background: #cccccc;
+  border: none;
+  border-bottom: solid thin #999999;
+}
+
+div.figure table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.figure caption {
+  caption-side: bottom;
+  font-size: 120%;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th.label {
+  text-align: right;
+  vertical-align: top;
+}
+
+th.sublabel {
+  text-align: right;
+  font-weight: normal;
+}
+
+hr {
+  border: solid thin;
+}
+
+span.info {
+  background: black;
+  border: thin solid black;
+  color: white;
+  font-size: 80%;
+  font-style: italic;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+h2 span.info, h3 span.info, h4 span.info {
+  float: right;
+  font-size: 100%;
+}
+
+h1.title {
+}
+
+h2.title, h3.title {
+  border-bottom: solid 2pt #000000;
+}
+
+div.indent, table.indent {
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+table.indent {
+  border-collapse: collapse;
+}
+
+table.indent td, table.indent th {
+  padding: 0;
+}
+
+table.list {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+table.list th {
+  background: white;
+  border-bottom: solid thin #cccccc;
+  color: #444444;
+  padding-top: 10pt;
+  padding-left: 5pt;
+  text-align: left;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+table.list th a {
+  color: #4444cc;
+}
+
+table.list td {
+  border-bottom: solid thin #eeeeee;
+  padding-top: 5pt;
+  padding-left: 5pt;
+}
+
+table.list tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+table.list tr:nth-child(odd) {
+  background: #f4f4f4;
+}
+
+dt {
+  margin-left: 36pt;
+  margin-top: 12pt;
+}
+
+dd {
+  margin-left: 54pt;
+}
+
+dl.category dt {
+  font-weight: bold;
+}
+
+p.summary {
+  margin-left: 36pt;
+}
+
+div.summary table {
+  border: solid thin #999999;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 10px;
+}
+
+div.summary table td, div.summary table th {
+  border: solid thin #999999;
+  padding: 5px;
+  text-align: left;
+  vertical-align: top;
+}
+
+div.summary table thead th {
+  background: #eeeeee;
+}
+
+div.body h1 {
+  margin: 0;
+}
+div.body h2 {
+  margin-top: 1.5em;
+}
+div.body h3, div.body h4, div.body h5 {
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+}
+.class, .enumeration, .function, .struct, .typedef, .union {
+  border-bottom: solid thin #999999;
+  margin-bottom: 0;
+  margin-top: 2em;
+}
+.description {
+  margin-top: 0.5em;
+}
+code, p.code, pre, ul.code li {
+  font-family: monaco, courier, monospace;
+  font-size: 90%;
+}
+ul.code, ul.contents, ul.subcontents {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+ul.code li {
+  margin: 0;
+}
+ul.contents > li {
+  margin-top: 1em;
+}
+ul.contents li ul.code, ul.contents li ul.subcontents {
+  padding-left: 2em;
+}
+div.body dl {
+  margin-left: 0;
+  margin-top: 0;
+}
+div.body dt {
+  font-style: italic;
+  margin-left: 0;
+  margin-top: 0;
+}
+div.body dd {
+  margin-bottom: 0.5em;
+}
+
+/* iPhone/iPod touch overrides */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+       only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .head {
+    padding: 10px 0px;
+  }
+
+  .foot {
+    padding: 5px 0px;
+  }
+
+  .mobile {
+    display: inline;
+  }
+  .no-mobile {
+    display: none;
+  }
+}
