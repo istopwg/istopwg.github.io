@@ -223,7 +223,7 @@ tr.data th {
   text-align: left;
 }
 
-table {
+table.standard {
   border: solid thin #999999;
   border-collapse: collapse;
   border-spacing: 0;
@@ -231,7 +231,7 @@ table {
   margin-right: auto;
 }
 
-table caption {
+table.standard caption {
   caption-side: top;
   font-size: 120%;
   font-style: italic;
@@ -240,12 +240,12 @@ table caption {
   margin-right: auto;
 }
 
-table td {
+table.standard td {
   border: solid thin #cccccc;
   padding-top: 5pt;
 }
 
-table th {
+table.standard th {
   background: #cccccc;
   border: none;
   border-bottom: solid thin #999999;
@@ -458,3 +458,4 @@ div.body dd {
     display: none;
   }
 }
+
