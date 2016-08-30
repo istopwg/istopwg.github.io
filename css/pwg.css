@@ -21,6 +21,7 @@ a.button:hover {
 /* Header, footer, and navigation */
 .nav {
   background: rgba(24,24,20,.9);
+  color: #fff;
   font-size: 18px;
   height: 30px;
   line-height: 20px;
@@ -29,6 +30,10 @@ a.button:hover {
   top: 0px;
   width: 100%;
   z-index: 100;
+}
+
+.nav .glyphicon {
+  font-size: 14px;
 }
 
 .nav ul {
@@ -44,6 +49,7 @@ a.button:hover {
   color: #fff;
   padding: 7px 10px 10px;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav a:hover {
@@ -67,18 +73,25 @@ a.button:hover {
   width: 100%;
 }
 
+.head h1, .head h2, .head p, .head a {
+  color: #fff;
+}
+
 .foot {
   background: #181814;
   background-image: linear-gradient(#4b5aa8, #181814);
-  padding: 15px 0px;
-  margin: 20px 0px 0px 0px;
   width: 100%;
-  z-index: 100 !important;
 }
 
-.head h1, .head h2, .head p, .head a,
-.foot h1, .foot h2, .foot p, .foot a {
+.foot p {
+  margin-top: 0px;
+  padding: 15px;
+  text-align: justify;
+}
+
+.foot p, .foot a {
   color: #fff;
+  font-size: 14px;
 }
 
 .head a.button, .foot a.button {
@@ -89,11 +102,54 @@ a.button:hover {
   background: #eee;
 }
 
+.pwg-bg10 {
+  background: rgba(75,90,168,0.1);
+}
+
+.pwg-bg20 {
+  background: rgba(75,90,168,0.2);
+}
+
+.pwg-bg30 {
+  background: rgba(75,90,168,0.3);
+}
+
+.pwg-bg40 {
+  background: rgba(75,90,168,0.4);
+}
+
+.pwg-bg50 {
+  background: rgba(75,90,168,0.5);
+}
+
+.pwg-bg60 {
+  background: rgba(75,90,168,0.6);
+}
+
+.pwg-bg70 {
+  background: rgba(75,90,168,0.7);
+}
+
+.pwg-bg80 {
+  background: rgba(75,90,168,0.8);
+}
+
+.pwg-bg90 {
+  background: rgba(75,90,168,0.9);
+}
+
+.container {
+  padding-bottom: 10px;
+}
+
 .mobile {
   display: none;
 }
 .no-mobile {
   display: inline;
+}
+td.no-mobile, th.no-mobile {
+  display: table-cell;
 }
 
 /* API documentation styles... */
@@ -167,7 +223,7 @@ tr.data th {
   text-align: left;
 }
 
-div.table table {
+table {
   border: solid thin #999999;
   border-collapse: collapse;
   border-spacing: 0;
@@ -175,7 +231,7 @@ div.table table {
   margin-right: auto;
 }
 
-div.table caption {
+table caption {
   caption-side: top;
   font-size: 120%;
   font-style: italic;
@@ -184,18 +240,19 @@ div.table caption {
   margin-right: auto;
 }
 
-div.table table td {
+table td {
   border: solid thin #cccccc;
   padding-top: 5pt;
 }
 
-div.table table th {
+table th {
   background: #cccccc;
   border: none;
   border-bottom: solid thin #999999;
+  padding: 1px 5px;
 }
 
-div.figure table {
+table.figure {
   margin-left: auto;
   margin-right: auto;
 }
@@ -313,21 +370,21 @@ p.summary {
   margin-left: 36pt;
 }
 
-div.summary table {
+table.summary {
   border: solid thin #999999;
   border-collapse: collapse;
   border-spacing: 0;
   margin: 10px;
 }
 
-div.summary table td, div.summary table th {
+table.summary td, table.summary th {
   border: solid thin #999999;
   padding: 5px;
   text-align: left;
   vertical-align: top;
 }
 
-div.summary table thead th {
+table.summary thead th {
   background: #eeeeee;
 }
 
@@ -394,7 +451,10 @@ div.body dd {
   .mobile {
     display: inline;
   }
-  .no-mobile {
+  td.mobile, th.mobile {
+    display: table-cell;
+  }
+  .no-mobile, td.no-mobile, th.no-mobile {
     display: none;
   }
 }
