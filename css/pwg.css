@@ -5,6 +5,10 @@ code, kbd, p.command, p.summary, pre {
   font-family: 'Source Code Pro', monospace;
 }
 
+a {
+  font: inherit;
+}
+
 a.button {
   background: #4b5aa8;
   border-radius: 12px;
