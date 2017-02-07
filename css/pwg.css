@@ -9,6 +9,11 @@ a {
   font: inherit;
 }
 
+p.buttons {
+  line-height: 48px;
+  text-align: center;
+}
+
 a.button {
   background: #4b5aa8;
   border-radius: 12px;
