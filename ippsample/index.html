@@ -1,71 +1,68 @@
 ---
-title: ippsample
-layout: default
+title: IPP Sample Code Project
+layout: project
+project: ippsample
 ---
 
-<div class="head">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="center">ippsample</h1>
-        <p class="justify">The ippsample project provides sample implementations of an IPP Client, Proxy, Server, and other tools. It is based on the <a href="http://www.cups.org">CUPS</a> source code and is maintained by the <a href="http://www.pwg.org/ipp">PWG IPP workgroup</a>.</p>
-        <p class="buttons"><a class="button no-mobile" href="https://github.com/istopwg/ippsample/tarball/master">Download Source</a>
-        <a class="button" href="https://github.com/istopwg/ippsample">Github Repository</a>
-        </p>
-      </div>
-    </div>
-  </div>
+<div class="jumbotron shadow-sm">
+  <h1 class="display-4">IPP Sample Code Project</h1>
+  <p class="lead">Sample implementations of an IPP Client, Proxy, Server, and other tools.</p>
+  <hr class="md-3">
+
+  <p>The <code>ippsample</code> project is based on the <a href="https://www.cups.org" target="_blank">CUPS</a> source code and is maintained by the <a href="https://www.pwg.org/ipp" target="_blank">PWG IPP workgroup</a>. The server implements most IPP standards including <a href="https://www.pwg.org/ipp/everywhere.html" target="_blank">IPP Everywhere&trade;</a> and includes transform support for 2D and 3D printing. A beta snap is available for Linux systems, with macOS and Windows binaries planned for the 1.0 release.</p>
+
+  <p><a class="btn btn-primary" href="https://github.com/istopwg/ippsample" role="button">Github Project</a>
+  <a class="btn btn-secondary" href="https://github.com/istopwg/ippsample/issues" role="button">Issue Tracker</a>
+  <a class="btn btn-secondary" href="#contributing" role="button">Contributing</a></p>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="center">Programs</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h2 class="center">ippfind</h2>
-      <p class="justify">The ippfind program implements Bonjour/DNS-SD discovery of IPP printers and can be used to find and test specific printers. Among other things, it is used as part of the IPP Everywhere Printer Self-Certification test tools.</p>
-      <p class="buttons"><a class="button" href="ippfind.html">ippfind(1)</a></p>
-    </div>
-    <div class="col-6">
-      <h2 class="center">ippproxy</h2>
-      <p class="justify">The ippproxy program implements a generic IPP Proxy interface that allows you to connect a local IPP or PCL printer to an IPP Infrastructure Printer such as the ippserver program.</p>
-      <p class="buttons"><a class="button" href="ippproxy.html">ippproxy(8)</a></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h2 class="center">ippserver</h2>
-      <p class="justify">The ippserver program implements a generic IPP Printer interface that allows you to host shared printers using the IPP Shared Infrastructure Extensions as well as support local printing or document processing.</p>
-      <p class="buttons"><a class="button" href="ippserver.html">ippserver(8)</a></p>
-    </div>
-    <div class="col-6">
-      <h2 class="center">ipptool</h2>
-      <p class="justify">The ipptool program implements a generic IPP Client interface that allows a user to send different IPP requests and act based on the response from the Printer. Among other things, it is used as part of the IPP Everywhere Printer Self-Certification test tools.</p>
-      <p class="buttons"><a class="button" href="ipptool.html">ipptool(1)</a>
-      <a class="button" href="ipptoolfile.html">ipptoolfile(5)</a></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <h2 class="center">ipptransform</h2>
-      <p class="justify">The ipptransform program is a generic file conversion utility that is used primarily with ippserver to support rasterization of JPEG and PDF documents for IPP Everywhere and HP PCL printers.</p>
-      <p class="buttons"><a class="button" href="ipptransform.html">ipptransform(1)</a></p>
-    </div>
-    <div class="col-6">
-      <h2 class="center">ipptransform3d</h2>
-      <p class="justify">The ipptransform3d program is a generic file conversion utility that is used primarily with ippserver to support slicing of STL and 3MF documents for 3D printers connected via USB.</p>
-      <p class="buttons"><a class="button" href="ipptransform3d.html">ipptransform3d(1)</a></p>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="center">CUPS API</h1>
-      <p class="justify">The CUPS API provides lower-level functions for managing HTTP and IPP client and server connections, functions for generating and consuming PWG Raster Format document data, and higher-level functions for discovering, querying, monitoring, and submitting print jobs to IPP printers.</p>
-      <p class="buttons"><a class="button" href="api.html">CUPS API Programming Guide</a></p>
-    </div>
-  </div>
-</div>
+
+<h2 id="about">About the IPP Sample Code</h2>
+
+<p>This project provides sample implementations of IPP Clients, Printers, and Proxies. It is largely based upon the <a href="https://www.cups.org/" target="_blank">CUPS</a> software with substantial changes to the <code>ippproxy</code> and <code>ippserver</code> implementations to make them more general-purpose and configurable. The project also includes two transform programs, <code>ipptransform</code> for 2D printing and <code>ipptransform3d</code> for 3D printing, as well as a "lint" program (<code>ippdoclint</code>) for validating document data in automated test environments.</p>
+
+
+<h2 id="contributing">Contributing</h2>
+
+<p>The IPP Sample Code is developed and distributed as open source software under the Apache License, Version 2.0. Contributions should be submitted as <a href="https://github.com/istopwg/ippsample/pulls">pull requests</a> on the Github site. Developer guidelines can be found in the file <a href="DEVELOPING.html">DEVELOPING.md</a>.</p>
+
+
+<h2 id="programs">Programs</h3>
+
+<h3 id="ippdoclint">ippdoclint <a class="badge badge-primary" href="ippdoclint.html">Man Page</a></h3>
+
+<p>The <code>ippdoclint</code> program validates document data in a variety of formats, allowing for automated testing of IPP clients.</p>
+
+<h3 id="ippfind">ippfind <a class="badge badge-primary" href="ippfind.html">Man Page</a></h3>
+
+<p>The <code>ippfind</code> program implements Bonjour/DNS-SD discovery of IPP printers and can be used to find and test specific printers. Among other things, it is used as part of the <a href="../ippeveselfcert/index.html">IPP Everywhere&trade; Printer Self-Certification</a> test tools.</p>
+
+<h3 id="ippproxy">ippproxy <a class="badge badge-primary" href="ippproxy.html">Man Page</a></h3>
+
+<p>The <code>ippproxy</code> program implements a generic IPP Proxy interface that allows you to connect a local IPP, PCL, or G-code printer to an IPP Infrastructure Printer such as the <code>ippserver</code> program.</p>
+
+<h3 id="ippserver">ippserver <a class="badge badge-primary" href="ippfind.html">Man Page</a></h3>
+
+<p>The <code>ippserver</code> program implements most IPP standards and is commonly used for prototyping and automated testing. It provides a generic IPP Printer interface that allows you to share printers locally or using the IPP Shared Infrastructure Extensions. Printers can be configured to use authentication and/or to provide transforms using the included or third-party programs. A scriptable web interface allows for a variety of automated testing opportunities.</p>
+
+<h3 id="ipptool">ipptool <a class="badge badge-primary" href="ipptool.html">Man Page</a> <a class="badge badge-secondary" href="ipptoolfile.html">Test File Format</a></h3>
+
+<p>The <code>ipptool</code> program implements a generic IPP Client interface that allows a user to send different IPP requests and act based on the response from the Printer. Among other things, it is used as part of the <a href="../ippeveselfcert/index.html">IPP Everywhere&trade; Printer Self-Certification</a> test tools.</p>
+
+<h3 id="ipptransform">ipptransform <a class="badge badge-primary" href="ipptransform.html">Man Page</a></h3>
+
+<p>The <code>ipptransform</code> program is a generic file conversion utility that is used primarily with ippserver to support rasterization of JPEG and PDF documents for IPP Everywhere and HP PCL printers.</p>
+
+<h3 id="ipptransform3d">ipptransform3d <a class="badge badge-primary" href="ipptransform3d.html">Man Page</a></h3>
+
+<p>The <code>ipptransform3d</code> program is a generic file conversion utility that is used primarily with ippserver to support slicing of STL and 3MF documents for 3D printers connected via USB.</p>
+
+
+<h2 id="legal">Legal Stuff</h2>
+
+<p>Copyright © 2014-2018 by the IEEE-ISTO Printer Working Group.<br>
+Copyright © 2007-2018 by Apple Inc.<br>
+Copyright © 1997-2007 by Easy Software Products.</p>
+
+<p>This software is provided under the terms of the Apache License, Version 2.0. A copy of this license can be found in the file <a href="">LICENSE</a>. Additional legal information is provided in the file <a href="">NOTICE</a>.</p>
+
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>

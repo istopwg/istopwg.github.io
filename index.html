@@ -3,7 +3,7 @@ title: The Printer Working Group on Github
 layout: default
 ---
 
-<div class="jumbotron shadow-sm" style="border: solid thin #ccc;">
+<div class="jumbotron shadow-sm">
   <h1 class="display-4">The Printer Working Group on Github</h1>
   <p class="lead">Open Source projects supporting our organization and its standards.</p>
   <p><a class="btn btn-primary" href="https://www.pwg.org" role="button">Main PWG Web Site</a>
@@ -50,6 +50,6 @@ layout: default
 </div>
 
 {% for post in site.posts offset: 0 limit: 8 %}
-<h2 style="margin-top: 40px;">{{post.title}} <small class="text-muted">{{ post.date | date_to_string }}</small></h2>
+<h2>{{post.title}} <small class="text-muted">{{ post.date | date_to_string }}</small></h2>
 {{ post.content }}
 {% endfor %}
