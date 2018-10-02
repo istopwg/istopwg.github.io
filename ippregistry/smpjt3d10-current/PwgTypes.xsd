@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.pwg.org/schemas/smpjt3d10-20170420" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pwg="http://www.pwg.org/schemas/smpjt3d10-20170420" targetNamespace="http://www.pwg.org/schemas/smpjt3d10-20170420" elementFormDefault="qualified" attributeFormDefault="qualified" version="0.20170420">
+  <xs:include schemaLocation="PwgWellKnownValues.xsd" />
+  <xs:annotation>
+    <xs:documentation>PWG Semantic Model v0.20170420
+Copyright &amp;copy; 2002-2017 The IEEE-ISTO Printer Working Group.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</xs:documentation>
+    <xs:documentation>Semantic types used for all elements.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="ElementWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CharsetType">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="63" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MimeMediaType">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NameType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NaturalLanguageType">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="63" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OctetStringType">
+    <xs:restriction base="xs:base64Binary">
+      <xs:maxLength value="43690" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RangeOfIntType">
+    <xs:sequence>
+      <xs:element name="LowerBound" type="xs:int" />
+      <xs:element name="UpperBound" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResolutionType">
+    <xs:sequence>
+      <xs:element name="CrossFeedDir" type="xs:int" />
+      <xs:element name="FeedDir" type="xs:int" />
+      <xs:element name="Units" type="UnitsWKV" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="UnitsWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Dpi" />
+      <xs:enumeration value="Dpcm" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TextType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1023" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

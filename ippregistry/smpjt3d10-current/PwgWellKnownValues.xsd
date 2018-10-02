@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.pwg.org/schemas/smpjt3d10-20170420" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pwg="http://www.pwg.org/schemas/smpjt3d10-20170420" targetNamespace="http://www.pwg.org/schemas/smpjt3d10-20170420" elementFormDefault="qualified" attributeFormDefault="qualified" version="0.20170420">
+  <xs:annotation>
+    <xs:documentation>PWG Semantic Model v0.20170420
+Copyright &amp;copy; 2002-2017 The IEEE-ISTO Printer Working Group.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</xs:documentation>
+    <xs:documentation>Well known values (i.e. keywords) used by semantic elements.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="DocumentStateWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Processing" />
+      <xs:enumeration value="ProcessingStopped" />
+      <xs:enumeration value="Canceled" />
+      <xs:enumeration value="Aborted" />
+      <xs:enumeration value="Completed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FinishingsWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Trim" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="JobStateWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="PendingHeld" />
+      <xs:enumeration value="Processing" />
+      <xs:enumeration value="ProcessingStopped" />
+      <xs:enumeration value="Canceled" />
+      <xs:enumeration value="Aborted" />
+      <xs:enumeration value="Completed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PrintQualityWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Draft" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="High" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PrinterStateWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Idle" />
+      <xs:enumeration value="Processing" />
+      <xs:enumeration value="Stopped" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AccuracyUnitsWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Mm" />
+      <xs:enumeration value="Nm" />
+      <xs:enumeration value="Um" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DocumentStateReasonsWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="AbortedBySystem" />
+      <xs:enumeration value="CanceledAtDevice" />
+      <xs:enumeration value="CanceledByOperator" />
+      <xs:enumeration value="CanceledByUser" />
+      <xs:enumeration value="CompletedSuccessfully" />
+      <xs:enumeration value="CompletedWithErrors" />
+      <xs:enumeration value="CompletedWithWarnings" />
+      <xs:enumeration value="CompressionError" />
+      <xs:enumeration value="DataInsufficient" />
+      <xs:enumeration value="DigitalSignatureDidNotVerify" />
+      <xs:enumeration value="DigitalSignatureTypeNotSupported" />
+      <xs:enumeration value="DigitalSignatureWait" />
+      <xs:enumeration value="DocumentAccessError" />
+      <xs:enumeration value="DocumentFetchable" />
+      <xs:enumeration value="DocumentFormatError" />
+      <xs:enumeration value="DocumentPasswordError" />
+      <xs:enumeration value="DocumentPermissionError" />
+      <xs:enumeration value="DocumentSecurityError" />
+      <xs:enumeration value="DocumentUnprintableError" />
+      <xs:enumeration value="ErrorsDetected" />
+      <xs:enumeration value="Incoming" />
+      <xs:enumeration value="Interpreting" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Outgoing" />
+      <xs:enumeration value="Printing" />
+      <xs:enumeration value="ProcessingToStopPoint" />
+      <xs:enumeration value="Queued" />
+      <xs:enumeration value="QueuedForMarker" />
+      <xs:enumeration value="QueuedInDevice" />
+      <xs:enumeration value="ResourcesAreNotReady" />
+      <xs:enumeration value="ResourcesAreNotSupported" />
+      <xs:enumeration value="SubmissionInterrupted" />
+      <xs:enumeration value="Transforming" />
+      <xs:enumeration value="UnsupportedCompression" />
+      <xs:enumeration value="UnsupportedDocumentFormat" />
+      <xs:enumeration value="WarningsDetected" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="JobAccountTypeWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="General" />
+      <xs:enumeration value="Group" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="JobStateReasonsWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="AbortedBySystem" />
+      <xs:enumeration value="AccountAuthorizationFailed" />
+      <xs:enumeration value="AccountClosed" />
+      <xs:enumeration value="AccountInfoNeeded" />
+      <xs:enumeration value="AccountLimitReached" />
+      <xs:enumeration value="CompressionError" />
+      <xs:enumeration value="ConflictingAttributes" />
+      <xs:enumeration value="ConnectedToDestination" />
+      <xs:enumeration value="ConnectingToDestination" />
+      <xs:enumeration value="DestinationUriFailed" />
+      <xs:enumeration value="DigitalSignatureDidNotVerify" />
+      <xs:enumeration value="DigitalSignatureTypeNotSupported" />
+      <xs:enumeration value="DocumentAccessError" />
+      <xs:enumeration value="DocumentFormatError" />
+      <xs:enumeration value="DocumentPasswordError" />
+      <xs:enumeration value="DocumentPermissionError" />
+      <xs:enumeration value="DocumentSecurityError" />
+      <xs:enumeration value="DocumentUnprintableError" />
+      <xs:enumeration value="ErrorsDetected" />
+      <xs:enumeration value="JobCanceledAtDevice" />
+      <xs:enumeration value="JobCanceledByOperator" />
+      <xs:enumeration value="JobCanceledByUser" />
+      <xs:enumeration value="JobCompletedSuccessfully" />
+      <xs:enumeration value="JobCompletedWithErrors" />
+      <xs:enumeration value="JobCompletedWithWarnings" />
+      <xs:enumeration value="JobDataInsufficient" />
+      <xs:enumeration value="JobDelayOutputUntilSpecified" />
+      <xs:enumeration value="JobDigitalSignatureWait" />
+      <xs:enumeration value="JobFetchable" />
+      <xs:enumeration value="JobHeldForReview" />
+      <xs:enumeration value="JobHoldUntilSpecified" />
+      <xs:enumeration value="JobIncoming" />
+      <xs:enumeration value="JobInterpreting" />
+      <xs:enumeration value="JobOutgoing" />
+      <xs:enumeration value="JobPasswordWait" />
+      <xs:enumeration value="JobPrintedSuccessfully" />
+      <xs:enumeration value="JobPrintedWithErrors" />
+      <xs:enumeration value="JobPrintedWithWarnings" />
+      <xs:enumeration value="JobPrinting" />
+      <xs:enumeration value="JobQueued" />
+      <xs:enumeration value="JobQueuedForMarker" />
+      <xs:enumeration value="JobReleaseWait" />
+      <xs:enumeration value="JobRestartable" />
+      <xs:enumeration value="JobResuming" />
+      <xs:enumeration value="JobSavedSuccessfully" />
+      <xs:enumeration value="JobSavedWithErrors" />
+      <xs:enumeration value="JobSavedWithWarnings" />
+      <xs:enumeration value="JobSaving" />
+      <xs:enumeration value="JobSpooling" />
+      <xs:enumeration value="JobStreaming" />
+      <xs:enumeration value="JobSuspended" />
+      <xs:enumeration value="JobSuspendedByOperator" />
+      <xs:enumeration value="JobSuspendedBySystem" />
+      <xs:enumeration value="JobSuspendedByUser" />
+      <xs:enumeration value="JobSuspending" />
+      <xs:enumeration value="JobTransferring" />
+      <xs:enumeration value="JobTransforming" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="PrinterStopped" />
+      <xs:enumeration value="PrinterStoppedPartly" />
+      <xs:enumeration value="ProcessingToStopPoint" />
+      <xs:enumeration value="QueuedInDevice" />
+      <xs:enumeration value="ResourcesAreNotReady" />
+      <xs:enumeration value="ResourcesAreNotSupported" />
+      <xs:enumeration value="ServiceOffLine" />
+      <xs:enumeration value="SubmissionInterrupted" />
+      <xs:enumeration value="UnsupportedAttributesOrValues" />
+      <xs:enumeration value="UnsupportedCompression" />
+      <xs:enumeration value="UnsupportedDocumentFormat" />
+      <xs:enumeration value="WaitingForUserAction" />
+      <xs:enumeration value="WarningsDetected" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MaterialAmountUnitsWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="g" />
+      <xs:enumeration value="kg" />
+      <xs:enumeration value="l" />
+      <xs:enumeration value="m" />
+      <xs:enumeration value="ml" />
+      <xs:enumeration value="mm" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MaterialPurposeWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="all" />
+      <xs:enumeration value="base" />
+      <xs:enumeration value="in-fill" />
+      <xs:enumeration value="shell" />
+      <xs:enumeration value="support" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MaterialRateUnitsWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="mg_second" />
+      <xs:enumeration value="ml_second" />
+      <xs:enumeration value="mm_second" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MaterialTypeWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="abs" />
+      <xs:enumeration value="abs-carbon-fiber" />
+      <xs:enumeration value="abs-carbon-nanotube" />
+      <xs:enumeration value="chocolate" />
+      <xs:enumeration value="gold" />
+      <xs:enumeration value="nylon" />
+      <xs:enumeration value="pet" />
+      <xs:enumeration value="photopolymer" />
+      <xs:enumeration value="pla" />
+      <xs:enumeration value="pla-conductive" />
+      <xs:enumeration value="pla-dissolvable" />
+      <xs:enumeration value="pla-flexible" />
+      <xs:enumeration value="pla-magnetic" />
+      <xs:enumeration value="pla-steel" />
+      <xs:enumeration value="pla-stone" />
+      <xs:enumeration value="pla-wood" />
+      <xs:enumeration value="polycarbonate" />
+      <xs:enumeration value="silver" />
+      <xs:enumeration value="titanium" />
+      <xs:enumeration value="wax" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MediaColorWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="black" />
+      <xs:enumeration value="blue" />
+      <xs:enumeration value="brown" />
+      <xs:enumeration value="buff" />
+      <xs:enumeration value="clear-black" />
+      <xs:enumeration value="clear-blue" />
+      <xs:enumeration value="clear-brown" />
+      <xs:enumeration value="clear-buff" />
+      <xs:enumeration value="clear-cyan" />
+      <xs:enumeration value="clear-gold" />
+      <xs:enumeration value="clear-goldenrod" />
+      <xs:enumeration value="clear-gray" />
+      <xs:enumeration value="clear-green" />
+      <xs:enumeration value="clear-ivory" />
+      <xs:enumeration value="clear-magenta" />
+      <xs:enumeration value="clear-multi-color" />
+      <xs:enumeration value="clear-mustard" />
+      <xs:enumeration value="clear-orange" />
+      <xs:enumeration value="clear-pink" />
+      <xs:enumeration value="clear-red" />
+      <xs:enumeration value="clear-silver" />
+      <xs:enumeration value="clear-turquoise" />
+      <xs:enumeration value="clear-violet" />
+      <xs:enumeration value="clear-white" />
+      <xs:enumeration value="clear-yellow" />
+      <xs:enumeration value="cyan" />
+      <xs:enumeration value="dark-blue" />
+      <xs:enumeration value="dark-brown" />
+      <xs:enumeration value="dark-buff" />
+      <xs:enumeration value="dark-cyan" />
+      <xs:enumeration value="dark-gold" />
+      <xs:enumeration value="dark-goldenrod" />
+      <xs:enumeration value="dark-gray" />
+      <xs:enumeration value="dark-green" />
+      <xs:enumeration value="dark-ivory" />
+      <xs:enumeration value="dark-magenta" />
+      <xs:enumeration value="dark-mustard" />
+      <xs:enumeration value="dark-orange" />
+      <xs:enumeration value="dark-pink" />
+      <xs:enumeration value="dark-red" />
+      <xs:enumeration value="dark-silver" />
+      <xs:enumeration value="dark-turquoise" />
+      <xs:enumeration value="dark-violet" />
+      <xs:enumeration value="dark-yellow" />
+      <xs:enumeration value="gold" />
+      <xs:enumeration value="goldenrod" />
+      <xs:enumeration value="gray" />
+      <xs:enumeration value="green" />
+      <xs:enumeration value="ivory" />
+      <xs:enumeration value="light-black" />
+      <xs:enumeration value="light-blue" />
+      <xs:enumeration value="light-brown" />
+      <xs:enumeration value="light-buff" />
+      <xs:enumeration value="light-cyan" />
+      <xs:enumeration value="light-gold" />
+      <xs:enumeration value="light-goldenrod" />
+      <xs:enumeration value="light-gray" />
+      <xs:enumeration value="light-green" />
+      <xs:enumeration value="light-ivory" />
+      <xs:enumeration value="light-magenta" />
+      <xs:enumeration value="light-mustard" />
+      <xs:enumeration value="light-orange" />
+      <xs:enumeration value="light-pink" />
+      <xs:enumeration value="light-red" />
+      <xs:enumeration value="light-silver" />
+      <xs:enumeration value="light-turquoise" />
+      <xs:enumeration value="light-violet" />
+      <xs:enumeration value="light-yellow" />
+      <xs:enumeration value="magenta" />
+      <xs:enumeration value="multi-color" />
+      <xs:enumeration value="mustard" />
+      <xs:enumeration value="no-color" />
+      <xs:enumeration value="orange" />
+      <xs:enumeration value="pink" />
+      <xs:enumeration value="red" />
+      <xs:enumeration value="silver" />
+      <xs:enumeration value="turquoise" />
+      <xs:enumeration value="violet" />
+      <xs:enumeration value="white" />
+      <xs:enumeration value="yellow" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MultipleObjectHandlingWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Auto" />
+      <xs:enumeration value="BestFit" />
+      <xs:enumeration value="BestQuality" />
+      <xs:enumeration value="BestSpeed" />
+      <xs:enumeration value="OneAtATime" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PdfFeaturesWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Prc" />
+      <xs:enumeration value="U3d" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PrintBaseWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Brim" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Raft" />
+      <xs:enumeration value="Skirt" />
+      <xs:enumeration value="Standard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PrintSupportsWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="Material" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Standard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PrinterStateReasonsWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="CameraFailure" />
+      <xs:enumeration value="ChamberCooling" />
+      <xs:enumeration value="ChamberHeating" />
+      <xs:enumeration value="ChamberTemperatureHigh" />
+      <xs:enumeration value="ChamberTemperatureLow" />
+      <xs:enumeration value="ConfigurationChange" />
+      <xs:enumeration value="ConnectingToDevice" />
+      <xs:enumeration value="CoverOpen" />
+      <xs:enumeration value="Deactivated" />
+      <xs:enumeration value="DoorOpen" />
+      <xs:enumeration value="ExtruderCooling" />
+      <xs:enumeration value="ExtruderFailure" />
+      <xs:enumeration value="ExtruderHeating" />
+      <xs:enumeration value="ExtruderJam" />
+      <xs:enumeration value="ExtruderTemperatureHigh" />
+      <xs:enumeration value="ExtruderTemperatureLow" />
+      <xs:enumeration value="FanFailure" />
+      <xs:enumeration value="HoldNewJobs" />
+      <xs:enumeration value="IdentifyPrinterRequested" />
+      <xs:enumeration value="InterlockClosed" />
+      <xs:enumeration value="InterlockOpen" />
+      <xs:enumeration value="InterpreterComplexPageEncountered" />
+      <xs:enumeration value="InterpreterMemoryDecrease" />
+      <xs:enumeration value="InterpreterMemoryIncrease" />
+      <xs:enumeration value="InterpreterResourceAdded" />
+      <xs:enumeration value="InterpreterResourceDeleted" />
+      <xs:enumeration value="InterpreterResourceUnavailable" />
+      <xs:enumeration value="LampAtEol" />
+      <xs:enumeration value="LampFailure" />
+      <xs:enumeration value="LampNearEol" />
+      <xs:enumeration value="LaserAtEol" />
+      <xs:enumeration value="LaserFailure" />
+      <xs:enumeration value="LaserNearEol" />
+      <xs:enumeration value="MaterialEmpty" />
+      <xs:enumeration value="MaterialLow" />
+      <xs:enumeration value="MaterialNeeded" />
+      <xs:enumeration value="MotorFailure" />
+      <xs:enumeration value="MovingToPaused" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="OutputAreaAlmostFull" />
+      <xs:enumeration value="OutputAreaFull" />
+      <xs:enumeration value="Paused" />
+      <xs:enumeration value="PowerDown" />
+      <xs:enumeration value="PowerUp" />
+      <xs:enumeration value="PrinterManualReset" />
+      <xs:enumeration value="PrinterNmsReset" />
+      <xs:enumeration value="PrinterReadyToPrint" />
+      <xs:enumeration value="Shutdown" />
+      <xs:enumeration value="SpoolAreaFull" />
+      <xs:enumeration value="StoppedPartly" />
+      <xs:enumeration value="Stopping" />
+      <xs:enumeration value="SubunitAdded" />
+      <xs:enumeration value="SubunitAlmostEmpty" />
+      <xs:enumeration value="SubunitAlmostFull" />
+      <xs:enumeration value="SubunitAtLimit" />
+      <xs:enumeration value="SubunitClosed" />
+      <xs:enumeration value="SubunitEmpty" />
+      <xs:enumeration value="SubunitFull" />
+      <xs:enumeration value="SubunitLifeAlmostOver" />
+      <xs:enumeration value="SubunitLifeOver" />
+      <xs:enumeration value="SubunitMemoryExhausted" />
+      <xs:enumeration value="SubunitMissing" />
+      <xs:enumeration value="SubunitMotorFailure" />
+      <xs:enumeration value="SubunitNearLimit" />
+      <xs:enumeration value="SubunitOffline" />
+      <xs:enumeration value="SubunitOpened" />
+      <xs:enumeration value="SubunitOverTemperature" />
+      <xs:enumeration value="SubunitPowerSaver" />
+      <xs:enumeration value="SubunitRecoverableFailure" />
+      <xs:enumeration value="SubunitRecoverableStorage" />
+      <xs:enumeration value="SubunitRemoved" />
+      <xs:enumeration value="SubunitResourceAdded" />
+      <xs:enumeration value="SubunitResourceRemoved" />
+      <xs:enumeration value="SubunitThermistorFailure" />
+      <xs:enumeration value="SubunitTurnedOff" />
+      <xs:enumeration value="SubunitTurnedOn" />
+      <xs:enumeration value="SubunitUnderTemperature" />
+      <xs:enumeration value="SubunitUnrecoverableFailure" />
+      <xs:enumeration value="SubunitUnrecoverableStorage" />
+      <xs:enumeration value="SubunitWarmingUp" />
+      <xs:enumeration value="TimedOut" />
+      <xs:enumeration value="TrimmerAdded" />
+      <xs:enumeration value="TrimmerAdded" />
+      <xs:enumeration value="TrimmerAlmostEmpty" />
+      <xs:enumeration value="TrimmerAlmostEmpty" />
+      <xs:enumeration value="TrimmerAlmostFull" />
+      <xs:enumeration value="TrimmerAlmostFull" />
+      <xs:enumeration value="TrimmerAtLimit" />
+      <xs:enumeration value="TrimmerAtLimit" />
+      <xs:enumeration value="TrimmerClosed" />
+      <xs:enumeration value="TrimmerClosed" />
+      <xs:enumeration value="TrimmerConfigurationChange" />
+      <xs:enumeration value="TrimmerConfigurationChange" />
+      <xs:enumeration value="TrimmerCoverClosed" />
+      <xs:enumeration value="TrimmerCoverClosed" />
+      <xs:enumeration value="TrimmerCoverOpen" />
+      <xs:enumeration value="TrimmerCoverOpen" />
+      <xs:enumeration value="TrimmerEmpty" />
+      <xs:enumeration value="TrimmerEmpty" />
+      <xs:enumeration value="TrimmerFull" />
+      <xs:enumeration value="TrimmerFull" />
+      <xs:enumeration value="TrimmerInterlockClosed" />
+      <xs:enumeration value="TrimmerInterlockClosed" />
+      <xs:enumeration value="TrimmerInterlockOpen" />
+      <xs:enumeration value="TrimmerInterlockOpen" />
+      <xs:enumeration value="TrimmerJam" />
+      <xs:enumeration value="TrimmerJam" />
+      <xs:enumeration value="TrimmerLifeAlmostOver" />
+      <xs:enumeration value="TrimmerLifeAlmostOver" />
+      <xs:enumeration value="TrimmerLifeOver" />
+      <xs:enumeration value="TrimmerLifeOver" />
+      <xs:enumeration value="TrimmerMemoryExhausted" />
+      <xs:enumeration value="TrimmerMemoryExhausted" />
+      <xs:enumeration value="TrimmerMissing" />
+      <xs:enumeration value="TrimmerMissing" />
+      <xs:enumeration value="TrimmerMotorFailure" />
+      <xs:enumeration value="TrimmerMotorFailure" />
+      <xs:enumeration value="TrimmerNearLimit" />
+      <xs:enumeration value="TrimmerNearLimit" />
+      <xs:enumeration value="TrimmerOffline" />
+      <xs:enumeration value="TrimmerOffline" />
+      <xs:enumeration value="TrimmerOpened" />
+      <xs:enumeration value="TrimmerOpened" />
+      <xs:enumeration value="TrimmerOverTemperature" />
+      <xs:enumeration value="TrimmerOverTemperature" />
+      <xs:enumeration value="TrimmerPowerSaver" />
+      <xs:enumeration value="TrimmerPowerSaver" />
+      <xs:enumeration value="TrimmerRecoverableFailure" />
+      <xs:enumeration value="TrimmerRecoverableFailure" />
+      <xs:enumeration value="TrimmerRecoverableStorage" />
+      <xs:enumeration value="TrimmerRemoved" />
+      <xs:enumeration value="TrimmerResourceAdded" />
+      <xs:enumeration value="TrimmerResourceRemoved" />
+      <xs:enumeration value="TrimmerThermistorFailure" />
+      <xs:enumeration value="TrimmerTimingFailure" />
+      <xs:enumeration value="TrimmerTurnedOff" />
+      <xs:enumeration value="TrimmerTurnedOn" />
+      <xs:enumeration value="TrimmerUnderTemperature" />
+      <xs:enumeration value="TrimmerUnrecoverableFailure" />
+      <xs:enumeration value="TrimmerUnrecoverableStorageError" />
+      <xs:enumeration value="TrimmerWarmingUp" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StatusCodeWKV">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:maxLength value="255" />
+      <xs:enumeration value="SuccessfulOk" />
+      <xs:enumeration value="SuccessfulOkIgnoredOrSubstitutedAttributes" />
+      <xs:enumeration value="SuccessfulOkConflictingAttributes" />
+      <xs:enumeration value="SuccessfulOkIgnoredSubscriptions" />
+      <xs:enumeration value="SuccessfulOkTooManyEvents" />
+      <xs:enumeration value="SuccessfulOkEventsComplete" />
+      <xs:enumeration value="ClientErrorBadRequest" />
+      <xs:enumeration value="ClientErrorForbidden" />
+      <xs:enumeration value="ClientErrorNotAuthenticated" />
+      <xs:enumeration value="ClientErrorNotAuthorized" />
+      <xs:enumeration value="ClientErrorNotPossible" />
+      <xs:enumeration value="ClientErrorTimeout" />
+      <xs:enumeration value="ClientErrorNotFound" />
+      <xs:enumeration value="ClientErrorGone" />
+      <xs:enumeration value="ClientErrorRequestEntityTooLarge" />
+      <xs:enumeration value="ClientErrorRequestValueTooLong" />
+      <xs:enumeration value="ClientErrorDocumentFormatNotSupported" />
+      <xs:enumeration value="ClientErrorAttributesOrValuesNotSupported" />
+      <xs:enumeration value="ClientErrorUriSchemeNotSupported" />
+      <xs:enumeration value="ClientErrorCharsetNotSupported" />
+      <xs:enumeration value="ClientErrorConflictingAttributes" />
+      <xs:enumeration value="ClientErrorCompressionNotSupported" />
+      <xs:enumeration value="ClientErrorCompressionError" />
+      <xs:enumeration value="ClientErrorDocumentFormatError" />
+      <xs:enumeration value="ClientErrorDocumentAccessError" />
+      <xs:enumeration value="ClientErrorAttributesNotSettable" />
+      <xs:enumeration value="ClientErrorIgnoredAllSubscriptions" />
+      <xs:enumeration value="ClientErrorTooManySubscriptions" />
+      <xs:enumeration value="ClientErrorDocumentPasswordError" />
+      <xs:enumeration value="ClientErrorDocumentPermissionError" />
+      <xs:enumeration value="ClientErrorDocumentSecurityError" />
+      <xs:enumeration value="ClientErrorDocumentUnprintableError" />
+      <xs:enumeration value="ClientErrorAccountInfoNeeded" />
+      <xs:enumeration value="ClientErrorAccountClosed" />
+      <xs:enumeration value="ClientErrorAccountLimitReached" />
+      <xs:enumeration value="ClientErrorAccountAuthorizationFailed" />
+      <xs:enumeration value="ClientErrorNotFetchable" />
+      <xs:enumeration value="ServerErrorInternalError" />
+      <xs:enumeration value="ServerErrorOperationNotSupported" />
+      <xs:enumeration value="ServerErrorServiceUnavailable" />
+      <xs:enumeration value="ServerErrorVersionNotSupported" />
+      <xs:enumeration value="ServerErrorDeviceError" />
+      <xs:enumeration value="ServerErrorTemporaryError" />
+      <xs:enumeration value="ServerErrorNotAcceptingJobs" />
+      <xs:enumeration value="ServerErrorBusy" />
+      <xs:enumeration value="ServerErrorJobCanceled" />
+      <xs:enumeration value="ServerErrorMultipleDocumentJobsNotSupported" />
+      <xs:enumeration value="ServerErrorPrinterIsDeactivated" />
+      <xs:enumeration value="ServerErrorTooManyJobs" />
+      <xs:enumeration value="ServerErrorTooManyDocuments" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

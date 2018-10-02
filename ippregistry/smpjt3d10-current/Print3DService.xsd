@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.pwg.org/schemas/smpjt3d10-20170420" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pwg="http://www.pwg.org/schemas/smpjt3d10-20170420" targetNamespace="http://www.pwg.org/schemas/smpjt3d10-20170420" elementFormDefault="qualified" attributeFormDefault="qualified" version="0.20170420">
+  <xs:include schemaLocation="PwgCommon.xsd" />
+  <xs:annotation>
+    <xs:documentation>PWG Semantic Model v0.20170420
+Copyright &amp;copy; 2002-2017 The IEEE-ISTO Printer Working Group.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</xs:documentation>
+    <xs:documentation>Print3D Service Definition.</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="Print3DDocumentDescriptionType">
+    <xs:sequence>
+      <xs:element ref="DocumentMetadata" maxOccurs="unbounded" />
+      <xs:element ref="DocumentName" />
+      <xs:element ref="KOctets" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DDocumentStatusType">
+    <xs:sequence>
+      <xs:element ref="DateTimeAtCreation" />
+      <xs:element ref="DateTimeAtProcessing" />
+      <xs:element ref="DocumentAccessErrors" maxOccurs="unbounded" />
+      <xs:element ref="DocumentFormat" />
+      <xs:element ref="DocumentFormatDetected" />
+      <xs:element ref="DocumentFormatSupplied" />
+      <xs:element ref="DocumentMessage" />
+      <xs:element ref="DocumentMessageSupplied" />
+      <xs:element ref="DocumentNameSupplied" />
+      <xs:element ref="DocumentState" />
+      <xs:element ref="DocumentStateMessage" />
+      <xs:element ref="DocumentStateReasons" maxOccurs="unbounded" />
+      <xs:element ref="DocumentUuid" />
+      <xs:element ref="ErrorsCount" />
+      <xs:element ref="KOctetsProcessed" />
+      <xs:element ref="OutputDeviceAssigned" />
+      <xs:element ref="WarningsCount" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DDocumentReceiptType">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="CopiesActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="FinishingsActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="MaterialsColActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="MultipleObjectHandlingActual" />
+      <xs:element minOccurs="0" ref="PlatformTemperatureActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="PrintAccuracyActual" />
+      <xs:element minOccurs="0" ref="PrintBaseActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="PrintObjectsActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="PrintQualityActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="PrintSupportsActual" maxOccurs="unbounded" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DDocumentProcessingType">
+    <xs:sequence>
+      <xs:element ref="Copies" minOccurs="0" />
+      <xs:element ref="Finishings" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="MaterialsCol" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="MultipleObjectHandling" minOccurs="0" />
+      <xs:element ref="PlatformTemperature" minOccurs="0" />
+      <xs:element ref="PrintAccuracy" minOccurs="0" />
+      <xs:element ref="PrintBase" minOccurs="0" />
+      <xs:element ref="PrintObjects" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="PrintQuality" minOccurs="0" />
+      <xs:element ref="PrintSupports" minOccurs="0" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DJobDescriptionType">
+    <xs:sequence>
+      <xs:element ref="DocumentMetadata" maxOccurs="unbounded" />
+      <xs:element ref="JobChargeInfo" />
+      <xs:element ref="JobName" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DJobStatusType">
+    <xs:sequence>
+      <xs:element ref="DateTimeAtCreation" />
+      <xs:element ref="DateTimeAtProcessing" />
+      <xs:element ref="DocumentFormatSupplied" />
+      <xs:element ref="DocumentMessageSupplied" />
+      <xs:element ref="DocumentNameSupplied" />
+      <xs:element ref="ErrorsCount" />
+      <xs:element ref="JobId" />
+      <xs:element ref="KOctets" />
+      <xs:element ref="KOctetsProcessed" />
+      <xs:element ref="JobOriginatingUserName" />
+      <xs:element ref="JobState" />
+      <xs:element ref="JobStateMessage" />
+      <xs:element ref="JobStateReasons" maxOccurs="unbounded" />
+      <xs:element ref="JobUuid" />
+      <xs:element ref="NumberOfDocuments" />
+      <xs:element ref="OutputDeviceAssigned" />
+      <xs:element ref="WarningsCount" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DJobReceiptType">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="CopiesActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="FinishingsActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="JobAccountIdActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="JobAccountTypeActual" />
+      <xs:element minOccurs="0" ref="JobAccountingUserIdActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="JobPriorityActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="MaterialsColActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="MultipleObjectHandlingActual" />
+      <xs:element minOccurs="0" ref="OutputDeviceActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="PlatformTemperatureActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="PrintAccuracyActual" />
+      <xs:element minOccurs="0" ref="PrintBaseActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="PrintObjectsActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="PrintQualityActual" maxOccurs="unbounded" />
+      <xs:element minOccurs="0" ref="PrintSupportsActual" maxOccurs="unbounded" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DJobProcessingType">
+    <xs:sequence>
+      <xs:element ref="Copies" minOccurs="0" />
+      <xs:element ref="Finishings" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="JobAccountId" minOccurs="0" />
+      <xs:element ref="JobAccountType" minOccurs="0" />
+      <xs:element ref="JobAccountingUserId" minOccurs="0" />
+      <xs:element ref="JobPriority" minOccurs="0" />
+      <xs:element ref="MaterialsCol" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="MultipleObjectHandling" minOccurs="0" />
+      <xs:element ref="OutputDevice" minOccurs="0" />
+      <xs:element ref="PlatformTemperature" minOccurs="0" />
+      <xs:element ref="PrintAccuracy" minOccurs="0" />
+      <xs:element ref="PrintBase" minOccurs="0" />
+      <xs:element ref="PrintObjects" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="PrintQuality" minOccurs="0" />
+      <xs:element ref="PrintSupports" minOccurs="0" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DServiceDescriptionType">
+    <xs:sequence>
+      <xs:element ref="ColorSupported" />
+      <xs:element ref="PdfFeaturesSupported" maxOccurs="unbounded" />
+      <xs:element ref="ServiceCameraImageUri" maxOccurs="unbounded" />
+      <xs:element ref="ServiceChargeInfoUri" />
+      <xs:element ref="ServiceCurrentTime" />
+      <xs:element ref="ServiceGeoLocation" />
+      <xs:element ref="ServiceInfo" />
+      <xs:element ref="ServiceLocation" />
+      <xs:element ref="ServiceMakeAndModel" />
+      <xs:element ref="ServiceName" />
+      <xs:element ref="ServiceOrganization" maxOccurs="unbounded" />
+      <xs:element ref="ServiceOrganizationalUnit" maxOccurs="unbounded" />
+      <xs:element ref="ServiceVolumeSupported" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DServiceCapabilitiesType">
+    <xs:sequence>
+      <xs:element ref="AccuracyUnitsSupported" maxOccurs="unbounded" />
+      <xs:element ref="CopiesSupported" />
+      <xs:element ref="DocumentFormatSupported" maxOccurs="unbounded" />
+      <xs:element ref="MaterialAmountUnitsSupported" maxOccurs="unbounded" />
+      <xs:element ref="MaterialDiameterSupported" maxOccurs="unbounded" />
+      <xs:element ref="MaterialPurposeSupported" maxOccurs="unbounded" />
+      <xs:element ref="MaterialRateSupported" maxOccurs="unbounded" />
+      <xs:element ref="MaterialRateUnitsSupported" maxOccurs="unbounded" />
+      <xs:element ref="MaterialShellThicknessSupported" maxOccurs="unbounded" />
+      <xs:element ref="MaterialTemperatureSupported" maxOccurs="unbounded" />
+      <xs:element ref="MaterialTypeSupported" maxOccurs="unbounded" />
+      <xs:element ref="MaterialsColDatabase" maxOccurs="unbounded" />
+      <xs:element ref="MaterialsColReady" maxOccurs="unbounded" />
+      <xs:element ref="MaxMaterialsColSupported" />
+      <xs:element ref="PlatformTemperatureSupported" maxOccurs="unbounded" />
+      <xs:element ref="PrintAccuracySupported" />
+      <xs:element ref="PrintBaseSupported" maxOccurs="unbounded" />
+      <xs:element ref="PrintQualitySupported" maxOccurs="unbounded" />
+      <xs:element ref="PrintSupportsSupported" maxOccurs="unbounded" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DServiceStatusType">
+    <xs:sequence>
+      <xs:element ref="ServiceConfigChangeDateTime" />
+      <xs:element ref="ServiceIsAcceptingJobs" />
+      <xs:element ref="ServiceMoreInfo" />
+      <xs:element ref="ServiceState" />
+      <xs:element ref="ServiceStateChangeDateTime" />
+      <xs:element ref="ServiceStateMessage" />
+      <xs:element ref="ServiceStateReasons" maxOccurs="unbounded" />
+      <xs:element ref="ServiceUuid" />
+      <xs:element ref="QueuedJobCount" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DServiceConfigurationType">
+    <xs:sequence>
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DDocumentTicketType">
+    <xs:sequence>
+      <xs:element name="Print3DDocumentDescription" type="Print3DDocumentDescriptionType" minOccurs="0" />
+      <xs:element name="Print3DDocumentProcessing" type="Print3DDocumentProcessingType" minOccurs="0" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DJobTicketType">
+    <xs:sequence>
+      <xs:element name="Print3DJobDescription" type="Print3DJobDescriptionType" minOccurs="0" />
+      <xs:element name="Print3DJobProcessing" type="Print3DJobProcessingType" minOccurs="0" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DDocumentType">
+    <xs:sequence>
+      <xs:element name="Print3DDocumentReceipt" type="Print3DDocumentReceiptType" minOccurs="0" />
+      <xs:element name="Print3DDocumentStatus" type="Print3DDocumentStatusType" />
+      <xs:element name="Print3DDocumentTicket" type="Print3DDocumentTicketType" minOccurs="0" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DJobType">
+    <xs:sequence>
+      <xs:element name="Print3DJobReceipt" type="Print3DJobReceiptType" minOccurs="0" />
+      <xs:element name="Print3DJobStatus" type="Print3DJobStatusType" />
+      <xs:element name="Print3DJobTicket" type="Print3DJobTicketType" minOccurs="0" />
+      <xs:element name="Print3DDocument" type="Print3DDocumentType" minOccurs="0" maxOccurs="unbounded" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Print3DServiceType">
+    <xs:sequence>
+      <xs:element name="Print3DServiceCapabilities" type="Print3DServiceCapabilitiesType" minOccurs="0" />
+      <xs:element name="Print3DServiceConfiguration" type="Print3DServiceConfigurationType" minOccurs="0" />
+      <xs:element name="Print3DServiceDefaults" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="DefaultPrint3DDocumentTicket" type="Print3DDocumentTicketType" minOccurs="0" />
+            <xs:element name="DefaultPrint3DJobTicket" type="Print3DJobTicketType" minOccurs="0" />
+            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Print3DServiceDescription" type="Print3DServiceDescriptionType" />
+      <xs:element name="Print3DServiceStatus" type="Print3DServiceStatusType" />
+      <xs:element name="Print3DJob" type="Print3DJobType" minOccurs="0" maxOccurs="unbounded" />
+      <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Print3DService" type="Print3DServiceType" />
+</xs:schema>

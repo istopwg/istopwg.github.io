@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.pwg.org/schemas/smpjt3d10-20170420" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pwg="http://www.pwg.org/schemas/smpjt3d10-20170420" targetNamespace="http://www.pwg.org/schemas/smpjt3d10-20170420" elementFormDefault="qualified" attributeFormDefault="qualified" version="0.20170420">
+  <xs:include schemaLocation="PwgTypes.xsd" />
+  <xs:annotation>
+    <xs:documentation>PWG Semantic Model v0.20170420
+Copyright &amp;copy; 2002-2017 The IEEE-ISTO Printer Working Group.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</xs:documentation>
+    <xs:documentation>Semantic elements used in more than one sub-schema.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="DocumentMetadata" type="OctetStringType">
+    <xs:annotation>
+      <xs:documentation>Strings are 'keyword=value', keywords are DublinCore elements or terms, values are UTF-8 plain text.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentName" type="NameType" />
+  <xs:element name="KOctets" type="xs:int" />
+  <xs:element name="CopiesActual" type="xs:int" />
+  <xs:element name="DateTimeAtCreation" type="xs:dateTime" />
+  <xs:element name="DateTimeAtProcessing" type="xs:dateTime" />
+  <xs:element name="DocumentAccessErrors" type="TextType" />
+  <xs:element name="DocumentFormat" type="MimeMediaType" />
+  <xs:element name="DocumentFormatDetected" type="MimeMediaType" />
+  <xs:element name="DocumentFormatSupplied" type="MimeMediaType" />
+  <xs:element name="DocumentMessage" type="TextType" />
+  <xs:element name="DocumentMessageSupplied" type="TextType" />
+  <xs:element name="DocumentNameSupplied" type="NameType" />
+  <xs:element name="DocumentState" type="DocumentStateWKV" />
+  <xs:element name="DocumentStateMessage" type="TextType" />
+  <xs:element name="DocumentStateReasons" type="DocumentStateReasonsWKV" />
+  <xs:element name="DocumentUuid" type="xs:anyURI" />
+  <xs:element name="ErrorsCount" type="xs:int" />
+  <xs:element name="FinishingsActual" type="FinishingsWKV" />
+  <xs:element name="KOctetsProcessed" type="xs:int" />
+  <xs:element name="MaterialsColActual" type="MaterialsColType" />
+  <xs:element name="MultipleObjectHandlingActual" type="MultipleObjectHandlingWKV" />
+  <xs:element name="OutputDeviceAssigned" type="NameType" />
+  <xs:element name="PlatformTemperatureActual" type="xs:int">
+    <xs:annotation>
+      <xs:documentation>Units are degrees Celsius.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PrintAccuracyActual" type="PrintAccuracyType" />
+  <xs:element name="PrintBaseActual" type="PrintBaseWKV" />
+  <xs:element name="PrintObjectsActual" type="PrintObjectsType" />
+  <xs:element name="PrintQualityActual" type="PrintQualityWKV" />
+  <xs:element name="PrintSupportsActual" type="PrintSupportsWKV" />
+  <xs:element name="WarningsCount" type="xs:int" />
+  <xs:element name="Copies" type="xs:int" />
+  <xs:element name="Finishings" type="FinishingsWKV" />
+  <xs:complexType name="MaterialsColType">
+    <xs:sequence>
+      <xs:element name="MaterialAmount" type="xs:int" />
+      <xs:element name="MaterialAmountUnits" type="MaterialAmountUnitsWKV" />
+      <xs:element name="MaterialColor" type="MediaColorWKV" />
+      <xs:element name="MaterialDiameter" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are nanometers.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaterialDiameterTolerance" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are nanometers.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaterialFillDensity" type="xs:int" />
+      <xs:element name="MaterialKey" type="xs:NMTOKEN" />
+      <xs:element name="MaterialName" type="NameType" />
+      <xs:element name="MaterialPurpose" type="MaterialPurposeWKV" maxOccurs="unbounded" />
+      <xs:element name="MaterialRate" type="xs:int" />
+      <xs:element name="MaterialRateUnits" type="MaterialRateUnitsWKV" />
+      <xs:element name="MaterialShellThickness" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are nanometers.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaterialTemperature" type="RangeOfIntType">
+        <xs:annotation>
+          <xs:documentation>Units are degrees Celsius.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaterialType" type="MaterialTypeWKV" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaterialsCol" type="MaterialsColType" />
+  <xs:element name="MultipleObjectHandling" type="MultipleObjectHandlingWKV" />
+  <xs:element name="PlatformTemperature" type="xs:int">
+    <xs:annotation>
+      <xs:documentation>Units are degrees Celsius.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="PrintAccuracyType">
+    <xs:sequence>
+      <xs:element name="AccuracyUnits" type="AccuracyUnitsWKV" />
+      <xs:element name="XAccuracy" type="xs:int" />
+      <xs:element name="YAccuracy" type="xs:int" />
+      <xs:element name="ZAccuracy" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintAccuracy" type="PrintAccuracyType" />
+  <xs:element name="PrintBase" type="PrintBaseWKV" />
+  <xs:complexType name="PrintObjectsType">
+    <xs:sequence>
+      <xs:element name="DocumentNumber" type="xs:int" />
+      <xs:element name="ObjectOffset" type="ObjectOffsetType" />
+      <xs:element name="ObjectSize" type="ObjectSizeType" />
+      <xs:element name="ObjectUuid" type="xs:anyURI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObjectOffsetType">
+    <xs:sequence>
+      <xs:element name="XOffset" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are hundredths of millimeters (1/2540th of an inch).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="YOffset" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are hundredths of millimeters (1/2540th of an inch).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZOffset" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are hundredths of millimeters (1/2540th of an inch).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObjectSizeType">
+    <xs:sequence>
+      <xs:element name="XDimension" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are hundredths of millimeters (1/2540th of an inch).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="YDimension" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are hundredths of millimeters (1/2540th of an inch).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZDimension" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are hundredths of millimeters (1/2540th of an inch).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintObjects" type="PrintObjectsType" />
+  <xs:element name="PrintSupports" type="PrintSupportsWKV" />
+  <xs:element name="JobId" type="xs:int" />
+  <xs:element name="JobState" type="JobStateWKV" />
+  <xs:element name="JobStateReasons" type="JobStateReasonsWKV" />
+  <xs:element name="JobUuid" type="xs:anyURI" />
+  <xs:element name="ServiceCurrentTime" type="xs:dateTime" />
+  <xs:element name="ServiceIsAcceptingJobs" type="xs:boolean" />
+  <xs:element name="ServiceState" type="PrinterStateWKV" />
+  <xs:element name="ServiceStateReasons" type="PrinterStateReasonsWKV" />
+  <xs:element name="JobChargeInfo" type="TextType" />
+  <xs:element name="JobName" type="NameType" />
+  <xs:element name="JobAccountIdActual" type="NameType" />
+  <xs:element name="JobAccountTypeActual" type="JobAccountTypeWKV" />
+  <xs:element name="JobAccountingUserIdActual" type="NameType" />
+  <xs:element name="JobOriginatingUserName" type="NameType" />
+  <xs:element name="JobPriorityActual" type="xs:int" />
+  <xs:element name="JobStateMessage" type="TextType" />
+  <xs:element name="NumberOfDocuments" type="xs:int" />
+  <xs:element name="OutputDeviceActual" type="NameType" />
+  <xs:element name="JobAccountId" type="NameType" />
+  <xs:element name="JobAccountType" type="JobAccountTypeWKV" />
+  <xs:element name="JobAccountingUserId" type="NameType" />
+  <xs:element name="JobPriority" type="xs:int" />
+  <xs:element name="OutputDevice" type="NameType" />
+  <xs:element name="PrintQuality" type="PrintQualityWKV" />
+  <xs:element name="JobAuthorizationUri" type="xs:anyURI" />
+  <xs:element name="AccuracyUnitsSupported" type="AccuracyUnitsWKV" />
+  <xs:element name="ColorSupported" type="xs:boolean" />
+  <xs:element name="CopiesSupported" type="RangeOfIntType" />
+  <xs:element name="DocumentFormatSupported" type="MimeMediaType" />
+  <xs:element name="MaterialAmountUnitsSupported" type="MaterialAmountUnitsWKV" />
+  <xs:element name="MaterialDiameterSupported" type="RangeOfIntType">
+    <xs:annotation>
+      <xs:documentation>Units are nanometers.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MaterialPurposeSupported" type="MaterialPurposeWKV" />
+  <xs:element name="MaterialRateSupported" type="RangeOfIntType" />
+  <xs:element name="MaterialRateUnitsSupported" type="MaterialRateUnitsWKV" />
+  <xs:element name="MaterialShellThicknessSupported" type="RangeOfIntType">
+    <xs:annotation>
+      <xs:documentation>Units are nanometers.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MaterialTemperatureSupported" type="RangeOfIntType">
+    <xs:annotation>
+      <xs:documentation>Units are degrees Celsius.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MaterialTypeSupported" type="MaterialTypeWKV" />
+  <xs:element name="MaterialsColDatabase" type="MaterialsColType" />
+  <xs:element name="MaterialsColReady" type="MaterialsColType" />
+  <xs:element name="MaxMaterialsColSupported" type="xs:int" />
+  <xs:element name="PdfFeaturesSupported" type="PdfFeaturesWKV" />
+  <xs:element name="PlatformTemperatureSupported" type="RangeOfIntType">
+    <xs:annotation>
+      <xs:documentation>Units are degrees Celsius.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="PrintAccuracySupportedType">
+    <xs:sequence>
+      <xs:element name="AccuracyUnits" type="AccuracyUnitsWKV" />
+      <xs:element name="XAccuracy" type="xs:int" />
+      <xs:element name="YAccuracy" type="xs:int" />
+      <xs:element name="ZAccuracy" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintAccuracySupported" type="PrintAccuracySupportedType" />
+  <xs:element name="PrintBaseSupported" type="PrintBaseWKV" />
+  <xs:element name="PrintQualitySupported" type="PrintQualityWKV" />
+  <xs:element name="PrintSupportsSupported" type="PrintSupportsWKV" />
+  <xs:element name="ServiceCameraImageUri" type="xs:anyURI" />
+  <xs:element name="ServiceChargeInfoUri" type="xs:anyURI" />
+  <xs:element name="ServiceGeoLocation" type="xs:anyURI" />
+  <xs:element name="ServiceInfo" type="TextType" />
+  <xs:element name="ServiceLocation" type="TextType" />
+  <xs:element name="ServiceMakeAndModel" type="TextType" />
+  <xs:element name="ServiceName" type="NameType" />
+  <xs:element name="ServiceOrganization" type="TextType" />
+  <xs:element name="ServiceOrganizationalUnit" type="TextType" />
+  <xs:complexType name="PrinterVolumeSupportedType">
+    <xs:sequence>
+      <xs:element name="XDimension" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are hundredths of millimeters (1/2540th of an inch).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="YDimension" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are hundredths of millimeters (1/2540th of an inch).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ZDimension" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Units are hundredths of millimeters (1/2540th of an inch).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceVolumeSupported" type="PrinterVolumeSupportedType" />
+  <xs:element name="ServiceConfigChangeDateTime" type="xs:dateTime" />
+  <xs:element name="ServiceMoreInfo" type="xs:anyURI" />
+  <xs:element name="ServiceStateChangeDateTime" type="xs:dateTime" />
+  <xs:element name="ServiceStateMessage" type="TextType" />
+  <xs:element name="ServiceUuid" type="xs:anyURI" />
+  <xs:element name="QueuedJobCount" type="xs:int" />
+</xs:schema>

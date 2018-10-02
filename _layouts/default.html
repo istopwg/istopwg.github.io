@@ -1,9 +1,38 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="css/simple-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/pwg.css">
-    <link rel="shortcut icon" href="apple-touch-icon.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!--    <link rel="stylesheet" type="text/css" href="/css/pwg.css">-->
+    <style><!--
+.dropdown-menu {
+  background: #000;
+  color: #ccc;
+}
+.dropdown-menu .dropdown-item {
+  color: #ccc;
+}
+.dropdown-menu .dropdown-item:hover {
+  background: #333;
+  color: #fff;
+}
+h2.card-title {
+  font-size: 125%;
+}
+footer {
+  background: #000;
+  color: #ccc;
+  font-size: 80%;
+  margin: 0px;
+  padding: 10px;
+}
+@media print {
+  footer {
+    background: #eee;
+    color: #000;
+  }
+}
+    --></style>
+    <link rel="shortcut icon" href="/apple-touch-icon.png" type="image/png">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=9">
@@ -11,16 +40,38 @@
     <title>{{page.title}}</title>
     <meta name="keywords" content="printing,internet printing protocol,ipp,ipp everywhere,semantic model">
   </head>
-  <body>
-    <div class="nav">
-      <ul>
-        <li><a href="http://www.pwg.org/"><img src="apple-touch-icon.png"></a></li>
-        <li><a href="http://istopwg.github.io/">Github Projects</a></li>
-      </ul>
-    </div>
-    {{ content }}
-    <div class="foot">
-      <p>Copyright &copy; 2016-{{ site.time | date: "%Y" }} by The ISTO Printer Working Group. IPP Everywhere, the IPP Everywhere logo, and the PWG logo are registered trademarks of the IEEE-ISTO. Please contact the <a href="mailto:webmaster@pwg.org">PWG Webmaster</a> to report problems with this site.</p>
-    </div>
+  <body style="background: black;">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background: rgba(0,0,0,.9);" role="navigation">
+        <a class="navbar-brand" href="https://www.pwg.org/"><img src="/apple-touch-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#pwgNavContent" aria-controls="pwgnav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="pwgNavContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/">PWG on Github</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgProjContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+              <div class="dropdown-menu" aria-labelledby="pwgProjContent">
+                <a class="dropdown-item" href="/ippeveselfcert/index.html">IPP Everywhere&trade; Printer Self-Certification</a>
+                <a class="dropdown-item" href="/ippregistry/index.html">IPP Registry</a>
+                <a class="dropdown-item" href="/ippsample/index.html">IPP Sample Code</a>
+                <a class="dropdown-item" href="/pwg-books/index.html">PWG Books</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <body role="main">
+      <div class="container-fluid" style="background: white; padding: 75px 20px 5px;">
+        {{ content }}
+      </div>
+    </body>
+    <footer class="container-fluid">
+      Copyright &copy; 2016-{{ site.time | date: "%Y" }} by The ISTO Printer Working Group. IPP Everywhere, the IPP Everywhere logo, and the PWG logo are trademarks of the IEEE-ISTO. Please contact the <a href="mailto:webmaster@pwg.org">PWG Webmaster</a> to report problems with this site.
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -1,0 +1,76 @@
+---
+title: ippregistry
+layout: default
+---
+
+<div class="head">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="center">ippregistry</h1>
+        <p class="justify">The ippregistry project provides tools for maintaining the <a href="http://www.iana.org/assignments/ipp-registrations/ipp-registrations.xml">IANA IPP Registry</a> and is maintained by the <a href="http://www.pwg.org/ipp">PWG IPP workgroup</a>.</p>
+        <p class="buttons"><a class="button no-mobile" href="https://github.com/istopwg/ippregistry/tarball/master">Download Source</a>
+        <a class="button" href="https://github.com/istopwg/ippregistry">Github Repository</a>
+        <a class="button" href="ipp-current/ipp-registrations.xml">Prototype IPP Registry</a>
+        <a class="button" href="smpjt3d10-current/Print3DService.html">Prototype SM Print3D Schema</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="center">Programs</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="center">register</h2>
+      <p class="summary">./register [-f] [-o newfile.xml] [-t "Standard Title"] [-x "Standard URL"] filename.xml [regtext.txt]</p>
+      <h3>Description</h3>
+      <p class="justify"><b>register</b> imports plain-text registration templates from specifications or emails into the IANA IPP (XML) registry file. If no template file is specified, <b>register</b> reads from the standard input.</p>
+      <h3>Options</h3>
+      <p class="summary">-f</p>
+      <p>Force writing of new file.</p>
+      <p class="summary">-o newfile.xml</p>
+      <p>Specifies a new XML file to write to. By default <b>register</b> overwrites the original XML file.</p>
+      <p class="summary">-t "Standard Title"</p>
+      <p>Specifies the title of the standard or reference to the template.</p>
+      <p class="summary">-x "Standard URL"</p>
+      <p>Specifies the URL for the standard or reference. Strings of the form "rfcNNNN" are also supported for RFCs.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="center">regtostrings</h2>
+      <p class="summary">./regtostrings filename.xml >filename.strings</p>
+      <h3>Description</h3>
+      <p class="justify"><b>regtostrings</b> generates the US English base strings file for all attributes, keywords, and enum values. It is used to supply the IPP strings file at <a href="http://ftp.pwg.org/pub/pwg/ipp/examples/ipp.strings">http://ftp.pwg.org/pub/pwg/ipp/examples/ipp.strings</a>.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="center">regtosm</h2>
+      <p class="summary">./regtosm [-n namespace-url] [-v version] filename.xml output-directory</p>
+      <h3>Description</h3>
+      <p class="justify"><b>regtosm</b> generates a PWG Semantic Model XML Schema. Note: This program is a prototype and is not yet used to publish new versions of the PWG Semantic Model.</p>
+      <h3>Options</h3>
+      <p class="summary">-a attribute-list</p>
+      <p>Specifies a list of attributes to include in the service description. If not specified, all attributes are included.</p>
+      <p class="summary">-n namespace-url</p>
+      <p>Specifies the namespace URL to use in the generated schema. If not specified, a URL of the form "http://www.pwg.org/schemas/YYYY/MM/sm" is generated.</p>
+      <p class="summary">-s service-name</p>
+      <p>Specifies the service name to use in the generated schema. If not specified, a service called "Print" is generated.</p>
+      <p class="summary">-v version</p>
+      <p>Specifies the version number to use in the generated schema. If not specified, a version of the form "2.9nnnnn" is generated, where "nnnnn" is the number of days since 1970.</p>
+      <h3>Prototype Schema</h3>
+      <p class="justify">A prototype schema can be <a href="smpjt3d10-current/Print3dService.html">viewed in your browser</a> or as four XSD files:</p>
+      <ul>
+        <li><a href="smpjt3d10-current/Print3dService.xsd">Print3DService.xsd</a></li>
+        <li><a href="smpjt3d10-current/PwgCommon.xsd">PwgCommon.xsd</a></li>
+        <li><a href="smpjt3d10-current/PwgTypes.xsd">PwgTypes.xsd</a></li>
+        <li><a href="smpjt3d10-current/PwgWellKnownValues.xsd">PwgWellKnownValues.xsd</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
