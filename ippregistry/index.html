@@ -74,11 +74,18 @@ project: ippregistry
 
 <h3>regtostrings</h3>
 
-<p>./regtostrings filename.xml >filename.strings</p>
+<p>./regtostrings [ --po ] filename.xml >filename.strings</p>
 
 <h4>Description</h4>
 
 <p><code>regtostrings</code> generates the US English base strings file for all attributes, keywords, and enum values. It is used to generate the IPP strings file at <a href="https://ftp.pwg.org/pub/pwg/ipp/examples/ipp.strings">https://ftp.pwg.org/pub/pwg/ipp/examples/ipp.strings</a>.</p>
+
+<h4>Options</h4>
+
+<dl class="row">
+  <dt class="col-sm-3">--po</dt>
+  <dd class="col-sm-9">Specifies that the GNU gettext message catalog format should be generated instead of the default Apple .strings format.</dd>
+</dl>
 
 
 <h2 id="legal">Legal Stuff</h2>
