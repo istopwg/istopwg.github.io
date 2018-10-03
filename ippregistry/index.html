@@ -1,76 +1,91 @@
 ---
 title: ippregistry
-layout: default
+layout: project-lite
+project: ippregistry
 ---
 
-<div class="head">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="center">ippregistry</h1>
-        <p class="justify">The ippregistry project provides tools for maintaining the <a href="http://www.iana.org/assignments/ipp-registrations/ipp-registrations.xml">IANA IPP Registry</a> and is maintained by the <a href="http://www.pwg.org/ipp">PWG IPP workgroup</a>.</p>
-        <p class="buttons"><a class="button no-mobile" href="https://github.com/istopwg/ippregistry/tarball/master">Download Source</a>
-        <a class="button" href="https://github.com/istopwg/ippregistry">Github Repository</a>
-        <a class="button" href="ipp-current/ipp-registrations.xml">Prototype IPP Registry</a>
-        <a class="button" href="smpjt3d10-current/Print3DService.html">Prototype SM Print3D Schema</a></p>
-      </div>
-    </div>
-  </div>
+<div class="jumbotron shadow-sm">
+  <h1 class="display-4">IPP Registry Project</h1>
+  <p class="lead">Tools for maintaining the IPP-based registries, schema, and strings files.</p>
+
+  <p><a class="btn btn-primary" href="https://github.com/istopwg/ippregistry" role="button">Github Project</a>
+  <a class="btn btn-secondary" href="https://github.com/istopwg/ippregistry/issues" role="button">Issue Tracker</a>
+  <a class="btn btn-secondary" href="https://www.pwg.org/ipp/ipp-registrations.xml" target="_blank">Prototype IPP Registry</a>
+  <a class="btn btn-secondary" href="smpjt3d10-current/Print3DService.html">Prototype SM Print3D Schema</a></p>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="center">Programs</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="center">register</h2>
-      <p class="summary">./register [-f] [-o newfile.xml] [-t "Standard Title"] [-x "Standard URL"] filename.xml [regtext.txt]</p>
-      <h3>Description</h3>
-      <p class="justify"><b>register</b> imports plain-text registration templates from specifications or emails into the IANA IPP (XML) registry file. If no template file is specified, <b>register</b> reads from the standard input.</p>
-      <h3>Options</h3>
-      <p class="summary">-f</p>
-      <p>Force writing of new file.</p>
-      <p class="summary">-o newfile.xml</p>
-      <p>Specifies a new XML file to write to. By default <b>register</b> overwrites the original XML file.</p>
-      <p class="summary">-t "Standard Title"</p>
-      <p>Specifies the title of the standard or reference to the template.</p>
-      <p class="summary">-x "Standard URL"</p>
-      <p>Specifies the URL for the standard or reference. Strings of the form "rfcNNNN" are also supported for RFCs.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="center">regtostrings</h2>
-      <p class="summary">./regtostrings filename.xml >filename.strings</p>
-      <h3>Description</h3>
-      <p class="justify"><b>regtostrings</b> generates the US English base strings file for all attributes, keywords, and enum values. It is used to supply the IPP strings file at <a href="http://ftp.pwg.org/pub/pwg/ipp/examples/ipp.strings">http://ftp.pwg.org/pub/pwg/ipp/examples/ipp.strings</a>.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="center">regtosm</h2>
-      <p class="summary">./regtosm [-n namespace-url] [-v version] filename.xml output-directory</p>
-      <h3>Description</h3>
-      <p class="justify"><b>regtosm</b> generates a PWG Semantic Model XML Schema. Note: This program is a prototype and is not yet used to publish new versions of the PWG Semantic Model.</p>
-      <h3>Options</h3>
-      <p class="summary">-a attribute-list</p>
-      <p>Specifies a list of attributes to include in the service description. If not specified, all attributes are included.</p>
-      <p class="summary">-n namespace-url</p>
-      <p>Specifies the namespace URL to use in the generated schema. If not specified, a URL of the form "http://www.pwg.org/schemas/YYYY/MM/sm" is generated.</p>
-      <p class="summary">-s service-name</p>
-      <p>Specifies the service name to use in the generated schema. If not specified, a service called "Print" is generated.</p>
-      <p class="summary">-v version</p>
-      <p>Specifies the version number to use in the generated schema. If not specified, a version of the form "2.9nnnnn" is generated, where "nnnnn" is the number of days since 1970.</p>
-      <h3>Prototype Schema</h3>
-      <p class="justify">A prototype schema can be <a href="smpjt3d10-current/Print3dService.html">viewed in your browser</a> or as four XSD files:</p>
-      <ul>
-        <li><a href="smpjt3d10-current/Print3dService.xsd">Print3DService.xsd</a></li>
-        <li><a href="smpjt3d10-current/PwgCommon.xsd">PwgCommon.xsd</a></li>
-        <li><a href="smpjt3d10-current/PwgTypes.xsd">PwgTypes.xsd</a></li>
-        <li><a href="smpjt3d10-current/PwgWellKnownValues.xsd">PwgWellKnownValues.xsd</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+
+<h2 id="about">About the IPP Registry Project</h2>
+
+<p>The <code>ippregistry</code> project provides tools for maintaining the IANA IPP Registry, PWG Semantic Model schema, and sample IPP strings files. It is maintained by the <a href="https://www.pwg.org/ipp" target="_blank">PWG IPP workgroup</a>. Three tools and a script are provided:</p>
+
+<ul>
+  <li><code>apply-pending.sh</code>, a script that applies a list of plain text registrations;</li>
+  <li><code>register</code>, a tool to apply plain text registration templates to the current IANA IPP XML registry file;</li>
+  <li><code>regtosm</code>, a prototype tool for generating PWG Semantic Model XML schema; and</li>
+  <li><code>regtostrings</code>, a tool for generating the <code>ipp.strings</code> file that provides localized strings for all registered attributes and values.</li>
+</ul>
+
+
+<h2 id="programs">Programs</h2>
+
+<h3>register</h3>
+
+<p>./register [-f] [-o newfile.xml] [-t "Standard Title"] [-x "Standard URL"] filename.xml [regtext.txt]</p>
+
+<h4>Description</h4>
+
+<p><code>register</code> imports plain-text registration templates from specifications or emails into the IANA IPP (XML) registry file. If no template file is specified, <code>register</code> reads from the standard input.</p>
+
+<h4>Options</h4>
+
+<dl class="row">
+  <dt class="col-sm-3">-f</dt>
+  <dd class="col-sm-9">Force writing of new file.</dd>
+  <dt class="col-sm-3">-o newfile.xml</dt>
+  <dd class="col-sm-9">Specifies a new XML file to write to. By default <code>register</code> overwrites the original XML file.</dd>
+  <dt class="col-sm-3">-t "Standard Title"</dt>
+  <dd class="col-sm-9">Specifies the title of the standard or reference to the template.</dd>
+  <dt class="col-sm-3">-x "Standard URL"</dt>
+  <dd class="col-sm-9">Specifies the URL for the standard or reference. Strings of the form "rfcNNNN" are also supported for RFCs.</dd>
+</dl>
+
+
+<h3>regtosm</h3>
+
+<p>./regtosm [-n namespace-url] [-v version] filename.xml output-directory</p>
+
+<h4>Description</h4>
+
+<p><code>regtosm</code> generates a PWG Semantic Model XML Schema. It is currently used to produce the <a href="smpjt3d10-current/Print3DService.html">Prototype SM Print3D Schema</a>.</p>
+
+<h4>Options</h4>
+
+<dl class="row">
+  <dt class="col-sm-3">-a attribute-list</dt>
+  <dd class="col-sm-9">Specifies a list of attributes to include in the service description. If not specified, all attributes are included.</dd>
+  <dt class="col-sm-3">-n namespace-url</dt>
+  <dd class="col-sm-9">Specifies the namespace URL to use in the generated schema. If not specified, a URL of the form "http://www.pwg.org/schemas/YYYY/MM/sm" is generated.</dd>
+  <dt class="col-sm-3">-s service-name</dt>
+  <dd class="col-sm-9">Specifies the service name to use in the generated schema. If not specified, a service called "Print" is generated.</dd>
+  <dt class="col-sm-3">-v version</dt>
+  <dd class="col-sm-9">Specifies the version number to use in the generated schema. If not specified, a version of the form "2.9nnnnn" is generated, where "nnnnn" is the number of days since 1970.</dd>
+</dl>
+
+
+<h3>regtostrings</h3>
+
+<p>./regtostrings filename.xml >filename.strings</p>
+
+<h4>Description</h4>
+
+<p><code>regtostrings</code> generates the US English base strings file for all attributes, keywords, and enum values. It is used to generate the IPP strings file at <a href="https://ftp.pwg.org/pub/pwg/ipp/examples/ipp.strings">https://ftp.pwg.org/pub/pwg/ipp/examples/ipp.strings</a>.</p>
+
+
+<h2 id="legal">Legal Stuff</h2>
+
+<p>Copyright © 2018 by the IEEE-ISTO Printer Working Group.<br>
+Copyright © 2008-2017 by Michael R Sweet.</p>
+
+<p>This software is provided under the terms of the Apache License, Version 2.0. A copy of this license can be found in the file <a href="https://github.com/istopwg/ippregistry/blob/master/LICENSE">LICENSE</a>. Additional legal information is provided in the file <a href="https://github.com/istopwg/ippregistry/blob/master/NOTICE">NOTICE</a>.</p>
+
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
