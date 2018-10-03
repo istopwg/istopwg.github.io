@@ -1,13 +1,63 @@
+/*
+ * PWG customizations of Bootstrap CSS.
+ *
+ * Colors:
+ *
+ * - PWG logo color: #4b5aa8
+ * - PWG hover color: #394ba8
+ * - Highlight color: #b8c3ff
+ * - Highlight hover color: #94a4ff
+ * - Lowlight color: #262d54
+ * - Navigation background: #181814 or rgba(24, 24, 20, 0.9)
+ * - Navigation text: #ccccc0
+ *
+ * Fonts:
+ *
+ * - Regular text: Arial
+ * - Monospace text: Courier New
+ */
+
+body {
+  font-family: arial, helvetica, sans-serif;
+}
+pre, code, kbd, samp, tt {
+  font-family: courier new, courier, monospace;
+}
+
+code, kbd, samp, tt {
+  color: inherit;
+  font-size: 100%;
+}
+
+a {
+  color: #4b5aa8;
+}
+a:hover {
+  color: #394ba8;
+}
+
+.btn-primary, .badge-primary {
+  color: #fff;
+  background-color: #4b5aa8;
+  border-color: #4b5aa8;
+}
+
+.btn-primary:hover, .badge-primary[href]:hover, .badge-primary[href]:focus {
+  color: #fff;
+  background-color: #394ba8;
+  border-color: #394ba8;
+}
+
 .dropdown-menu {
-  background: #000;
-  color: #ccc;
+  background: #181814;
+  color: #ccccc0;
 }
 .dropdown-menu .dropdown-item {
-  color: #ccc;
+  color: #ccccc0;
 }
 .dropdown-menu .dropdown-item:hover {
-  background: #333;
-  color: #fff;
+  background: #303028;
+  color: #fffff0;
 }
 h2 {
   margin-top: 40px;
@@ -25,28 +75,42 @@ h3 .badge {
   vertical-align: 5px;
   white-space: nowrap;
 }
+.navbar {
+  background: rgba(24,24,20,.9);
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #ccccc0;
+}
 footer {
-  background: #000;
-  color: #ccc;
+  background: #181814;
+  color: #ccccc0;
   font-size: 80%;
   margin: 0px;
   padding: 10px;
 }
+footer a {
+  color: #b8c3ff;
+}
+footer a:hover {
+  color: #94a4ff;
+}
+
 .jumbotron {
-  border: solid thin #ccc;
+  border: solid thin #ccccc0;
 }
 blockquote {
-  background: #4E5AA3;
+  border-left: solid 2px #394ba8;
+  background: #4b5aa8;
   color: white;
   padding: 10px 20px 10px;
 }
 pre, p.summary {
-  border-left: solid 2px #4E5AA3;
+  border-left: solid 2px #4b5aa8;
   padding-left: 20px;
 }
 
 @media print {
-  footer {
+  blockquote, footer {
     background: #eee;
     color: #000;
   }
