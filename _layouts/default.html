@@ -20,29 +20,104 @@
         </button>
         <div class="collapse navbar-collapse" id="pwgNavContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/">PWG on Github</a></li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgProjContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgAboutContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+              <div class="dropdown-menu" aria-labelledby="pwgAboutContent">
+                <a class="dropdown-item" href="https://www.pwg.org/about.html">About the PWG</a>
+                <a class="dropdown-item" href="https://www.pwg.org/members.html#JOINING">Joining</a>
+                <a class="dropdown-item" href="https://www.pwg.org/members.html">Members</a>
+                <a class="dropdown-item" href="https://www.pwg.org/chair/index.html">Officers</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://www.pwg.org/bofs.html">BOF Sessions</a>
+                <a class="dropdown-item" href="https://www.pwg.org/mailhelp.html">Mailing Lists</a>
+                <a class="dropdown-item" href="https://www.pwg.org/chair/meeting-info/meetings.html">Meetings</a>
+                <a class="dropdown-item" href="https://www.pwg.org/chair/participating.html">Participating</a>
+                <a class="dropdown-item" href="https://ieee-isto.org/privacy-policy/">Privacy Policy</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgWorkContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Work</a>
+              <div class="dropdown-menu" aria-labelledby="pwgWorkContent">
+                <h6 class="dropdown-header">Publications</h6>
+                <a class="dropdown-item" href="https://www.pwg.org/informational.html">Informational Documents</a>
+                <a class="dropdown-item" href="https://www.pwg.org/namespaces.html">Namespaces</a>
+                <a class="dropdown-item" href="https://www.pwg.org/standards.html">Standards</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Technologies</h6>
+                <a class="dropdown-item" href="https://www.pwg.org/3d/index.html">3D Printing</a>
+                <a class="dropdown-item" href="https://www.pwg.org/ipp/everywhere.html">IPP Everywhere&trade;</a>
+                <a class="dropdown-item" href="https://www.pwg.org/sm/model.html">PWG Semantic Model</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgWGContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Workgroups</a>
+              <div class="dropdown-menu" aria-labelledby="pwgWGContent">
+                <h6 class="dropdown-header">Active Workgroups</h6>
+                <a class="dropdown-item" href="https://www.pwg.org/ids/index.html">Imaging Device Security</a>
+                <a class="dropdown-item" href="https://www.pwg.org/ipp/index.html">Internet Printing Protocol</a>
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Inactive Workgroups</h6>
+                <a class="dropdown-item" href="https://www.pwg.org/cloud/index.html">Cloud Imaging Model</a>
+                <a class="dropdown-item" href="https://www.pwg.org/sm/index.html">Semantic Model</a>
+                <a class="dropdown-item" href="https://www.pwg.org/wims/index.html">Workgroup for Imaging Management Solutions</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgProjContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Github Projects</a>
               <div class="dropdown-menu" aria-labelledby="pwgProjContent">
+                <a class="dropdown-item" href="/">All Projects</a>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/ippeveselfcert/index.html">IPP Everywhere&trade; Printer Self-Certification</a>
                 <a class="dropdown-item" href="/ippregistry/index.html">IPP Registry</a>
                 <a class="dropdown-item" href="/ippsample/index.html">IPP Sample Code</a>
                 <a class="dropdown-item" href="/pwg-books/index.html">PWG Books</a>
               </div>
             </li>
+            <li class="nav-item"><a class="nav-link" href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search<!--<img src="/images/search.png" width="20" height="20" align="top">--></a></li>
           </ul>
         </div>
       </nav>
     </header>
-    <body role="main">
-      <div class="container-fluid" style="background: white; padding: 75px 20px 5px;">
-        {{ content }}
+    <div id="modalSearch" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+           <div class="modal-header">
+             <h4 class="modal-title">Search PWG</h4>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <script type="text/javascript" async="" src="https://cse.google.com/cse.js?cx=018021367961685880654:mdt584m83r4"></script><script>
+               (function() {
+             var cx = '018021367961685880654:mdt584m83r4';
+             var gcse = document.createElement('script');
+             gcse.type = 'text/javascript';
+             gcse.async = true;
+             gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+             var s = document.getElementsByTagName('script')[0];
+             s.parentNode.insertBefore(gcse, s);
+               })();
+             </script>
+             <gcse:search></gcse:search>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+           </div>
+        </div>
       </div>
-    </body>
+    </div>
+    <div class="container-fluid" style="background: white; padding: 75px 20px 5px;">
+      {{ content }}
+    </div>
     <footer class="container-fluid">
-      Copyright &copy; 2016-{{ site.time | date: "%Y" }} by The ISTO Printer Working Group. IPP Everywhere, the IPP Everywhere logo, and the PWG logo are trademarks of the IEEE-ISTO. Please contact the <a href="mailto:webmaster@pwg.org">PWG Webmaster</a> to report problems with this site.
+      Copyright &copy; 2016-{{ site.time | date: "%Y" }} by The ISTO Printer Working Group. IPP Everywhere, the IPP Everywhere logo, and the PWG logo are trademarks of the IEEE-ISTO.<br>
+      <a href="https://www.pwg.org/about.html">About the PWG</a>
+      &middot;
+      <a href="https://ieee-isto.org/privacy-policy/">Privacy Policy</a>
+      &middot;
+      <a href="mailto:webmaster@pwg.org">PWG Webmaster</a>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="/js/pwg-cookie-notice.js"></script>
   </body>
 </html>

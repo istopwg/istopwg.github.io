@@ -100,8 +100,9 @@ footer a:hover {
 }
 blockquote {
   border-left: solid 2px #394ba8;
-  background: #4b5aa8;
-  color: white;
+/*  background: #4b5aa8;*/
+  background: #b8c3ff;
+  color: black;
   padding: 10px 20px 10px;
 }
 pre, p.summary {
