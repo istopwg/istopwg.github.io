@@ -1,0 +1,34 @@
+---
+title: IPP Everywhere Press Release
+layout: default
+permalink: /blog/:year-:month-:day-:title.html
+excerpt_separator: <!--more-->
+---
+
+CONTACT: Anne Price, PR works, Inc., +1-602-330-6495, anne@prworksonline.com
+
+*NEW IPP EVERYWHERE STANDARD LETS USERS PRINT FROM SMARTPHONES AND TABLETS WITHOUT APPS OR VENDOR-SPECIFIC DEVICE DRIVERS*
+
+CUPERTINO, Calif., May 14, 2013 – Users of today’s smartphones and tablets can do almost anything on these devices – except print from them natively, without downloading apps or vendor-specific device drivers. Now, an industry standards group, the IEEE-ISTO Printer Working Group, has solved that problem with a new specification, IPP Everywhere.
+
+IPP refers to the group’s Internet Printing Protocol that enables printing without drivers provided by vendors of printers or multifunction devices. The IPP standard is supported by all major printer manufacturers and in most operating systems. The new standard, IPP Everywhere, defines a new baseline for printing without vendor-specific driver software and includes support for mobile devices that constantly roam from network to network.
+
+With IPP Everywhere, users can find and select a printer, choose printer-specific output options, and print their photos, web pages, documents, forms, and tickets securely without installing vendor-specific or model-specific software or drivers.
+
+Unlike existing, proprietary solutions, IPP Everywhere exposes the full range of printer capabilities, from borderless photo printing to stapling and other finishing features offered by many office printers.
+
+IPP Everywhere printers integrate seamlessly in both home and office environments thanks to the use of Bonjour and ActiveDirectory. Included geo-location information will enable future commercial printing services using the same core software on a user’s computer or mobile device.
+
+“IPP Everywhere empowers users to not only access data and transactions but to print critical documents, even when roaming and not connected to their home networks. From airline boarding passes to secure documents, users of IPP Everywhere-enabled applications can express their specific printing requirements without installation of cumbersome vendor drivers or third-party apps,” said Paul Tykodi, principal consultant of Tykodi Consulting Services LLC and co-chair of the IEEE-ISTO PWG IPP working group.
+
+Printer makers, many of whom are members of the PWG, plan to support IPP Everywhere with products to enable printing without vendor-specific software. PWG will offer a self-certification program as well.
+
+“IPP gave printer makers an easy way to provide standardized print services, and the addition of printing without vendor-specific driver software in IPP Everywhere for mobile devices expands that ease of use to all,” noted Ira McDonald, co-chair, IEEE-ISTO PWG IPP working group.
+
+More information including the specification documents, FAQs and more are located at [https://www.pwg.org/ipp/everywhere.html](/ipp/everywhere.html).
+
+The PWG is a program of the IEEE Industry Standards and Technology Organization (ISTO). Members include printer makers, print server developers, operating system vendors, network operating system developers, network connectivity vendors and print management application providers.
+
+All brands and trademarks are the property of their respective owners.
+
+Also available on the [Wall Street Journal](http://online.wsj.com/article/PR-CO-20130514-912035.html).

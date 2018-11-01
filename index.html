@@ -1,55 +1,45 @@
 ---
-title: The Printer Working Group on Github
-layout: default
+title: The Printer Working Group
+layout: bare
 ---
 
-<div class="jumbotron shadow-sm">
-  <h1 class="display-4">The Printer Working Group on Github</h1>
-  <p class="lead">Open Source projects supporting our organization and its standards.</p>
-  <p><a class="btn btn-primary" href="https://www.pwg.org" role="button">Main PWG Web Site</a>
-  <a class="btn btn-secondary" href="https://github.com/istopwg" role="button">PWG Github Organization Page</a></p>
-</div>
-
-<div class="row">
-  <div class="col-sm-12 col-md-6 col-lg-3">
-    <div class="card bg-light mb-3 shadow-sm" style="height: 100%;">
-      <div class="card-body">
-        <h2 class="card-title">IPP Everywhere&trade; Printer Self-Certification Tools</h2>
-        <p class="card-text">The <code>ippeveselfcert</code> project contains the tools for certifying printers against the IPP Everywhere™ standard.</p>
-      </div>
-      <div class="card-footer"><a class="btn btn-secondary btn-sm" href="/ippeveselfcert/index.html">Project Page</a></div>
-    </div>
-  </div>
-  <div class="col-sm-12 col-md-6 col-lg-3">
-    <div class="card bg-light mb-3 shadow-sm" style="height: 100%;">
-      <div class="card-body">
-        <h2 class="card-title">IPP Registry Tools</h2>
-        <p class="card-text">The <code>ippregistry</code> project provides the tools that maintain the IANA IPP Registry, PWG Semantic Model schema, and strings files.</p>
-      </div>
-      <div class="card-footer"><a class="btn btn-secondary btn-sm" href="/ippregistry/index.html">Project Page</a></div>
-    </div>
-  </div>
-  <div class="col-sm-12 col-md-6 col-lg-3">
-    <div class="card bg-light mb-3 shadow-sm" style="height: 100%;">
-      <div class="card-body">
-        <h2 class="card-title">IPP Sample Code</h2>
-        <p class="card-text">The <code>ippsample</code> project contains sample implementations of an IPP Client, Proxy, Server, and other tools.</p>
-      </div>
-      <div class="card-footer"><a class="btn btn-secondary btn-sm" href="/ippsample/index.html">Project Page</a></div>
-    </div>
-  </div>
-  <div class="col-sm-12 col-md-6 col-lg-3">
-    <div class="card bg-light mb-3 shadow-sm" style="height: 100%;">
-      <div class="card-body">
-        <h2 class="card-title">PWG Books</h2>
-        <p class="card-text">The <code>pwg-books</code> project provides introductory books for PWG standards.</p>
-      </div>
-      <div class="card-footer"><a class="btn btn-secondary btn-sm" href="/pwg-books/index.html">Project Page</a></div>
-    </div>
+<div class="row pwg-panel pwg-base">
+  <div class="col-md-12 col-sm-12">
+    <h1><img class="pwg-logo-sm hidden-sm" src="/pwg-logos/pwg-medium@2x.png">The Printer Working Group</h1>
+    <p class="lead">Making printers and multi-function devices work better with applications and operating systems.</p>
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a class="nav-link" href="/about.html" role="button">About the PWG</a></li>
+      <li class="nav-item"><a class="nav-link" href="/standards.html" role="button">Standards</a></li>
+      <li class="nav-item"><a class="nav-link" href="/printers">Find Printers</a></li>
+    </ul>
   </div>
 </div>
+<div class="row pwg-panel">
+  <div class="col-sm-12 col-md-4">
+    <h2>3D Printing <a class="badge badge-pill badge-primary" href="/3d/index.html">i</a></h2>
+    <p>The PWG has defined an IPP extension for 3D printing using standard file formats and an associated XML print job ticket format.</p>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <h2>IPP Everywhere&trade; <a class="badge badge-pill badge-primary" href="/ipp/everywhere.html">i</a></h2>
+    <p>Print to any network or USB printer without using special software from the manufacturer.</p>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <h2>PWG Semantic Model <a class="badge badge-pill badge-primary" href="/sm/model.html">i</a></h2>
+    <p>Support multiple network protocols and job ticket formats using our abstract model.</p>
+  </div>
+</div>
+<div class="row pwg-panel pwg-alt-0">
+  <div class="col-md-12 col-sm-12">
+    <h2>Recent News</h2>
 
-{% for post in site.posts offset: 0 limit: 8 %}
-<h2>{{post.title}} <small class="text-muted">{{ post.date | date_to_string }}</small></h2>
-{{ post.content }}
-{% endfor %}
+    {% for post in site.posts offset: 0 limit: 8 %}
+    <h3><small class="float-right text-muted">{{ post.date | date_to_string }}</small>{{post.title}}</h3>
+    {{ post.excerpt }}
+    {% if post.excerpt != post.content %}
+    <p><a class="btn btn-secondary btn-sm" href="{{ post.url }}">Read More</a></p>
+    {% endif %}
+    {% endfor %}
+
+    <p><a class="btn btn-primary btn-sm" href="/archive.html">Older Articles</a></p>
+  </div>
+</div>

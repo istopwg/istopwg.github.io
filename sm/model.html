@@ -1,0 +1,147 @@
+---
+title: PWG Semantic Model
+layout: bare
+---
+
+<!--subtitle Enabling Interoperability and Workflows -->
+<div class="row pwg-panel pwg-base">
+  <div class="col-md-12 col-sm-12">
+    <h1><img class="pwg-logo-md hidden-sm" src="pwg-medium@2x.png">PWG Semantic Model</h1>
+    <p>A collection of PWG standards and XML schema that enable interoperability and translation between different Job Ticket formats and printing systems.</p>
+    <ul class="nav nav-pills">
+      <li class="nav-item" role="presentation"><a class="nav-link" href="http://www.pwg.org/mfd/navigate/PwgSmRev1-185_PrintService.html#Link5E7">Browseable Schema</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row pwg-panel">
+  <div class="col-md-12 col-sm-12">
+    <h2>Building an Abstract Data Model</h2>
+    <p>The PWG Semantic Model is an abstract data model based on the Internet Printing Protocol and defined using XML schema. IPP attributes map directly to Semantic Model elements, enabling easy machine translation using Extensible Stylesheet Language Translation (XSLT) files.</p>
+    <table class="pwg-table hidden-sm" summary="Mapping IPP Attributes to Semantic Model Elements">
+      <caption>Table 1: 42 Copies of a 2-Sided A4 Document, Stapled and 3-Hole Punched</caption>
+      <thead>
+        <tr>
+          <th width="50%">IPP Attribute</th>
+          <th width="50%">Semantic Model Element</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>copies=42</td>
+          <td>&lt;Copies&gt;42&lt;/Copies&gt;</td>
+        </tr>
+        <tr>
+          <td>finishings='punch-triple-left','staple-top-left'</td>
+          <td>&lt;Finishings&gt;<br>
+&nbsp;&nbsp;&lt;Finishing&gt;PunchTripleLeft&lt;/Finishing&gt;<br>
+&nbsp;&nbsp;&lt;Finishing&gt;StapleTopLeft&lt;/Finishing&gt;<br>
+&lt;/Finishings&gt;</td>
+        </tr>
+        <tr>
+          <td>media-col={<br>
+&nbsp;&nbsp;media-size={<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x-dimension=21000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y-dimension=29700<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;media-type='stationery-plain'<br>
+}</td>
+          <td>&lt;MediaCol&gt;<br>
+&nbsp;&nbsp;&lt;MediaSize&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;XDimension&gt;21000&lt;/XDimension&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;YDimension&gt;29700&lt;/YDimension&gt;<br>
+&nbsp;&nbsp;&lt;/MediaSize&gt;<br>
+&nbsp;&nbsp;&lt;MediaType&gt;StationeryPlain&lt;/MediaType&gt;<br>
+&lt;/MediaCol&gt;</td>
+        </tr>
+        <tr>
+          <td>print-quality='high'</td>
+          <td>&lt;Quality&gt;High&lt;/Quality&gt;</td>
+        </tr>
+        <tr>
+          <td>sides='two-sided-long-edge'</td>
+          <td>&lt;Sides&gt;TwoSidedLongEdge&lt;/Sides&gt;</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="hidden-sm">&nbsp;</p>
+    <ul class="nav nav-pills">
+      <li class="nav-item" role="presentation"><a class="nav-link" href="http://ftp.pwg.org/pub/pwg/candidates/cs-sm20-pjt10-20120801-5108.07.pdf">PWG Print Job Ticket Specification</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row pwg-panel pwg-alt-0">
+  <div class="col-md-12 col-sm-12">
+    <h2>Mapping Between Data Models</h2>
+    <p>Using the abstract data model, the PWG has defined mappings from common Job Ticket formats to the Semantic Model. The most mature of these mappings is from the CIP4 Job Definition Format (JDF).</p>
+    <table class="pwg-table hidden-sm" summary="Mapping JDF Elements to Semantic Model Elements">
+      <caption>Table 2: 42 Copies of a 2-Sided A4 Document, Stapled and 3-Hole Punched</caption>
+      <thead>
+        <tr>
+          <th width="50%">JDF Element</th>
+          <th width="50%">Semantic Model Element</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt;ComponentLink @Amount="42"/&gt;</td>
+          <td>&lt;Copies&gt;42&lt;/Copies&gt;</td>
+        </tr>
+        <tr>
+          <td>&lt;HoleMakingParams HoleCount="3" HoleReferenceEdge="Left"/&gt;<br>
+&lt;StitchingParams Class="Parameter" ID="Stitch1" NumberOfStitches="1" StapleShape="Butted" Status="Available" StitchPositions="20"
+StitchWidth="12" WireBrand="Steel" WireGauge="2.3"/&gt;</td>
+          <td>&lt;Finishings&gt;<br>
+&nbsp;&nbsp;&lt;Finishing&gt;PunchTripleLeft&lt;/Finishing&gt;<br>
+&nbsp;&nbsp;&lt;Finishing&gt;StapleTopLeft&lt;/Finishing&gt;<br>
+&lt;/Finishings&gt;</td>
+        </tr>
+        <tr>
+          <td>&lt;Media @Dimension="210 297" @MediaTypeDetails="StationeryPlain"/&gt;</td>
+          <td>&lt;MediaCol&gt;<br>
+&nbsp;&nbsp;&lt;MediaSize&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;XDimension&gt;21000&lt;/XDimension&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;YDimension&gt;29700&lt;/YDimension&gt;<br>
+&nbsp;&nbsp;&lt;/MediaSize&gt;<br>
+&nbsp;&nbsp;&lt;MediaType&gt;StationeryPlain&lt;/MediaType&gt;<br>
+&lt;/MediaCol&gt;</td>
+        </tr>
+        <tr>
+          <td>&lt;InterpretingParams @PrintQuality="High"/&gt;</td>
+          <td>&lt;Quality&gt;High&lt;/Quality&gt;</td>
+        </tr>
+        <tr>
+          <td>&lt;DigitalPrintingParams @Sides="TwoSidedLongEdge"/&gt;</td>
+          <td>&lt;Sides&gt;TwoSidedLongEdge&lt;/Sides&gt;</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="hidden-sm">&nbsp;</p>
+    <ul class="nav nav-pills">
+      <li class="nav-item" role="presentation"><a class="nav-link" href="http://ftp.pwg.org/pub/pwg/sm3/wd/wd-smjdfmap10-20150604.pdf">Mapping CIP4 JDF to PWG Print Job Ticket Specification</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row pwg-panel pwg-alt-1">
+  <div class="col-md-12 col-sm-12">
+    <h2>Modeling All Imaging Services</h2>
+    <p>The PWG Semantic Model also defines abstract scan, fax, copy, resource, and system services that are used in a modern multifunction/all-in-one printer. This enables workflow between services as well as high-level management and access control policies using Extensible Access Control Markup Language (XACML).</p>
+    <p class="hidden-sm">&nbsp;</p>
+    <ul class="nav nav-pills">
+      <li class="nav-item" role="presentation"><a class="nav-link" href="http://ftp.pwg.org/pub/pwg/candidates/cs-sm20-mfdmodel10-20110415-5108.1.pdf">MFD Model and Common Semantics Specification</a></li>
+      <li class="nav-item" role="presentation"><a class="nav-link" href="http://ftp.pwg.org/pub/pwg/candidates/cs-sm20-system10-20120217-5108.06.pdf">System Object and System Control Service Specification</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row pwg-panel pwg-alt-2">
+  <div class="col-md-12 col-sm-12">
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="https://www.pwg.org/mailman/listinfo/sm3">Semantic Model Workgroup Mailing List</a></li>
+      <li><a href="http://www.pwg.org/mfd/navigate/PwgSmRev1-185_System.html">Browseable Schema</a></li>
+      <li><a href="http://ftp.pwg.org/pub/pwg/candidates/cs-sm20-pjt10-20120801-5108.07.pdf">PWG Print Job Ticket Specification</a></li>
+      <li><a href="http://ftp.pwg.org/pub/pwg/sm3/wd/wd-smjdfmap10-20150604.pdf">Mapping CIP4 JDF to PWG Print Job Ticket Specification</a></li>
+      <li><a href="http://ftp.pwg.org/pub/pwg/candidates/cs-sm20-mfdmodel10-20110415-5108.1.pdf">MFD Model and Common Semantics Specification</a></li>
+      <li><a href="http://ftp.pwg.org/pub/pwg/candidates/cs-sm20-system10-20120217-5108.06.pdf">System Object and System Control Service Specification</a></li>
+    </ul>
+  </div>
+</div>
