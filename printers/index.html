@@ -1,0 +1,143 @@
+---
+title: IPP Everywhere™ Printers
+layout: bare
+---
+
+<div class="row pwg-panel pwg-base">
+  <div class="col-md-12 col-sm-12">
+    <h1>IPP Everywhere™ Printers</h1>
+  </div>
+</div>
+<div class="row pwg-panel" style="height: 100%;">
+  <div class="col-md-12 col-sm-12">
+    <form id="search" onSubmit="update();" style="text-align: center;">Filter:
+    <input type="search" name="q" placeholder="Make, model, etc." size="40" list="qlist" autocomplete="org.pwg.ipp-everywhere" onInput="update();">
+    <datalist id="qlist">
+      <option value="Brother"></option>
+      <option value="Canon"></option>
+      <option value="DesignJet"></option>
+      <option value="DeskJet"></option>
+      <option value="EPSON"></option>
+      <option value="Fuji Xerox"></option>
+      <option value="HP"></option>
+      <option value="Konica Minolta"></option>
+      <option value="Kyocera"></option>
+      <option value="LaserJet"></option>
+      <option value="Lexmark"></option>
+      <option value="OfficeJet"></option>
+      <option value="Oki Data"></option>
+      <option value="Photosmart"></option>
+      <option value="Ricoh"></option>
+      <option value="Toshiba"></option>
+      <option value="Xerox"></option>
+    </datalist>
+    <select name="color" onChange="update();">
+      <option value="">Color and B&amp;W</option>
+      <option value="0">B&amp;W Only</option>
+      <option value="1">Color Only</option>
+    </select>
+    <select name="duplex" onChange="update();">
+      <option value="">1 and 2-Sided</option>
+      <option value="0">1-Sided Only</option>
+      <option value="1">2-Sided Only</option>
+    </select>
+    <select name="finishers" onChange="update();">
+      <option value="">Optional Staple, Punch, ...</option>
+      <option value="0">No Staple, Punch, ...</option>
+      <option value="1">Staple, Punch, ...</option>
+    </select>
+    <select name="ipps" onChange="update();">
+      <option value="">Optional IPPS</option>
+      <option value="0">No IPPSy</option>
+      <option value="1">IPPS Only</option>
+    </select>
+    </form>
+
+    <table class="pwg-table" summary="IPP Everywhere™ Printers">
+      <caption id="printerCount">??? printers.</caption>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Color?</th>
+          <th>2-Sided?</th>
+          <th>Finishers?</th>
+          <th>IPPS?</th>
+        </tr>
+      </thead>
+      <tbody id="printers">
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+function update()
+{
+  var printers = null;
+
+  console.log("update()");
+
+  fetch('./printers.json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    console.log("Got printers.json.");
+    printers = json;
+    console.log(printers);
+
+    var form = document.getElementById("search");
+    var q = form.elements[0].value.toLowerCase();
+    var color = form.elements[1].value;
+    var duplex = form.elements[2].value;
+    var finishers = form.elements[3].value;
+    var ipps = form.elements[4].value;
+
+    console.log("Query string: " + q);
+    console.log("Color: " + color);
+
+    var r = new Array(), j = 0, count = 0;
+    for (var i = 0; i < printers.length; i ++)
+    {
+      var printer = printers[i];
+
+      if (q != "" && printer[3].toLowerCase().indexOf(q) < 0)
+        continue;
+      if (color != "" && color != printer[6])
+        continue;
+      if (duplex != "" && duplex != printer[7])
+        continue;
+      if (finishers != "" && finishers != printer[8])
+        continue;
+      if (ipps != "" && ipps != printer[9])
+        continue;
+
+      r[j++] = '<tr><td><a href="';
+      r[j++] = printer[4];
+      r[j++] = '">';
+      r[j++] = printer[3];
+      r[j++] = '</td><td>';
+      r[j++] = printer[6] != 0 ? 'YES' : 'NO';
+      r[j++] = '</td><td>';
+      r[j++] = printer[7] != 0 ? 'YES' : 'NO';
+      r[j++] = '</td><td>';
+      r[j++] = printer[8] != 0 ? 'YES' : 'NO';
+      r[j++] = '</td><td>';
+      r[j++] = printer[9] != 0 ? 'YES' : 'NO';
+      r[j++] = '</td></tr>';
+      count ++;
+    }
+
+    if (count == 0)
+      document.getElementById("printerCount").innerHTML = 'No printers.';
+    else if (count == 1)
+      document.getElementById("printerCount").innerHTML = '1 printer.';
+    else
+      document.getElementById("printerCount").innerHTML = count + ' printers.';
+
+    document.getElementById("printers").innerHTML = r.join('');
+  });
+}
+
+update();
+</script>
