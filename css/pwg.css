@@ -59,6 +59,9 @@ a:hover {
   background: #181814;
   color: #ccccc0;
 }
+.dropdown-header {
+  color: #aaaaa0;
+}
 .dropdown-menu .dropdown-item {
   color: #ccccc0;
 }
