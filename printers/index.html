@@ -10,7 +10,7 @@ layout: bare
 </div>
 <div class="row pwg-panel" style="height: 100%;">
   <div class="col-md-12 col-sm-12">
-    <form id="search" onSubmit="update();" style="text-align: center;">Filter:
+    <form id="search" onSubmit="event.preventDefault(); update();" style="text-align: center;">Filter:
     <input type="search" name="q" placeholder="Make, model, etc." size="40" list="qlist" autocomplete="org.pwg.ipp-everywhere" onInput="update();">
     <datalist id="qlist">
       <option value="Brother"></option>
@@ -48,7 +48,7 @@ layout: bare
     </select>
     <select name="ipps" onChange="update();">
       <option value="">Optional IPPS</option>
-      <option value="0">No IPPSy</option>
+      <option value="0">No IPPS</option>
       <option value="1">IPPS Only</option>
     </select>
     </form>
@@ -58,10 +58,11 @@ layout: bare
       <thead>
         <tr>
           <th>Model</th>
-          <th>Color?</th>
-          <th>2-Sided?</th>
-          <th>Finishers?</th>
-          <th>IPPS?</th>
+          <th>Media</th>
+          <th>Color</th>
+          <th>2-Sided</th>
+          <th>Finishers</th>
+          <th>Encryption</th>
         </tr>
       </thead>
       <tbody id="printers">
@@ -101,29 +102,35 @@ function update()
     {
       var printer = printers[i];
 
-      if (q != "" && printer[3].toLowerCase().indexOf(q) < 0)
+      if (q != "" && printer["model"].toLowerCase().indexOf(q) < 0)
         continue;
-      if (color != "" && color != printer[6])
+      if (color != "" && color != printer["color_supported"])
         continue;
-      if (duplex != "" && duplex != printer[7])
+      if (duplex != "" && duplex != printer["duplex_supported"])
         continue;
-      if (finishers != "" && finishers != printer[8])
+      if (finishers != "" && finishers != printer["finishings_supported"])
         continue;
-      if (ipps != "" && ipps != printer[9])
+      if (ipps != "" && ipps != printer["ipps_supported"])
         continue;
 
       r[j++] = '<tr><td><a href="';
-      r[j++] = printer[4];
+      r[j++] = printer["url"];
       r[j++] = '">';
-      r[j++] = printer[3];
+      r[j++] = printer["model"];
       r[j++] = '</td><td>';
-      r[j++] = printer[6] != 0 ? 'YES' : 'NO';
+      r[j++] = printer["media_format"];
       r[j++] = '</td><td>';
-      r[j++] = printer[7] != 0 ? 'YES' : 'NO';
+      r[j++] = printer["color_supported"] != 0 ? 'YES' : 'NO';
       r[j++] = '</td><td>';
-      r[j++] = printer[8] != 0 ? 'YES' : 'NO';
+      r[j++] = printer["duplex_supported"] != 0 ? 'YES' : 'NO';
       r[j++] = '</td><td>';
-      r[j++] = printer[9] != 0 ? 'YES' : 'NO';
+      r[j++] = printer["finishings_supported"] != 0 ? 'YES -' : 'NO';
+      r[j++] = printer["finishings_fold"] != 0 ? ' Folder' : '';
+      r[j++] = printer["finishings_punch"] != 0 ? ' Puncher' : '';
+      r[j++] = printer["finishings_staple"] != 0 ? ' Stapler' : '';
+      r[j++] = printer["finishings_trim"] != 0 ? ' Cutter' : '';
+      r[j++] = '</td><td>';
+      r[j++] = printer["ipps_supported"] != 0 ? 'YES' : 'NO';
       r[j++] = '</td></tr>';
       count ++;
     }
