@@ -19,123 +19,142 @@
 
   <xsl:template match="/iana:registry">
     <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+      <link rel="stylesheet" type="text/css" href="/css/pwg.css" />
+      <link rel="shortcut icon" href="/apple-touch-icon.png" type="image/png" />
       <meta charset="utf-8" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
-      <link rel="stylesheet" type="text/css" href="/dynamo/resources/pwg.css" />
-      <link rel="shortcut icon" href="/dynamo/resources/pwg@2x.png" type="image/png" />
+      <title><xsl:value-of select="iana:title" /></title>
+      <meta name="keywords" content="printing,internet printing protocol,ipp,ipp everywhere,semantic model" />
       <link rel="stylesheet" href="iana-registry.css" type="text/css"/>
       <xsl:call-template name="iana:head"/>
-      <title><xsl:value-of select="iana:title" /> - Printer Working Group</title>
     </head>
-    <body>
-      <nav class="navbar navbar-inverse navbar-fixed-top pwg-navbar" role="navigation">
-	<div class="container-fluid">
-	  <div class="navbar-header">
-	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pwg-nav-collapsible"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-	    <a class="navbar-brand" href="/"><img src="/dynamo/resources/pwg-4dark.png" alt="PWG Logo" height="27" width="28" /></a>
-	  </div>
-	  <div class="collapse navbar-collapse" id="pwg-nav-collapsible">
-	    <ul class="nav navbar-nav">
-	      <li><a href="https://www.pwg.org/dynamo/login.php?PAGE=%2Fdynamo%2Fwrap.php%2Fipp%2Findex.html"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-	      <li><a href="/index.html">Home</a></li>
-	      <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu">
-		  <li><a href="/about.html">About the PWG</a></li>
-		  <li><a href="/members.html#JOINING">Joining</a></li>
-		  <li><a href="/members.html">Members</a></li>
-		  <li><a href="/chair/index.html">Officers</a></li>
-		  <li class="divider"></li>
-		  <li><a href="/bofs.html">BOF Sessions</a></li>
-		  <li><a href="/mailhelp.html">Mailing Lists</a></li>
-		  <li><a href="/chair/meeting-info/meetings.html">Meetings</a></li>
-		  <li><a href="/chair/participating.html">Participating</a></li>
-		  <li><a href="https://ieee-isto.org/privacy-policy/">Privacy Policy</a></li>
-		</ul>
+    <body style="background: black;">
+      <header>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation">
+	  <a class="navbar-brand" href="/"><img src="/apple-touch-icon.png" width="30" height="30" class="d-inline-block align-top" alt="" /></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#pwgNavContent" aria-controls="pwgnav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="pwgNavContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgAboutContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+		<div class="dropdown-menu" aria-labelledby="pwgAboutContent">
+		  <a class="dropdown-item" href="/about.html">About the PWG</a>
+		  <a class="dropdown-item" href="/chair/index.html">PWG Officers</a>
+		  <a class="dropdown-item" href="/members.html">PWG Members</a>
+		  <a class="dropdown-item" href="/members.html#JOINING">Joining</a>
+		  <a class="dropdown-item" href="/chair/participating.html">Participating</a>
+		  <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="/bofs.html">BOF Sessions</a>
+		  <a class="dropdown-item" href="/mailhelp.html">Mailing Lists</a>
+		  <a class="dropdown-item" href="/chair/meeting-info/meetings.html">Meetings</a>
+		  <a class="dropdown-item" href="https://ieee-isto.org/privacy-policy/">Privacy Policy</a>
+		</div>
 	      </li>
-	      <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Work <span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu">
-		  <li class="dropdown-header" role="presentation">Publications</li>
-		  <li><a href="/informational.html">Informational Documents</a></li>
-		  <li><a href="/namespaces.html">Namespaces</a></li>
-		  <li><a href="/standards.html">Standards</a></li>
-		  <li class="divider"></li>
-		  <li class="dropdown-header" role="presentation">Technologies</li>
-		  <li><a href="/3d/index.html">3D Printing</a></li>
-		  <li><a href="/ipp/everywhere.html">IPP Everywhere&#x2122;</a></li>
-		  <li><a href="/sm/model.html">PWG Semantic Model</a></li>
-		</ul>
+	      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgWorkContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Work</a>
+		<div class="dropdown-menu" aria-labelledby="pwgWorkContent">
+		  <h6 class="dropdown-header">Publications</h6>
+		  <a class="dropdown-item" href="/informational.html">Informational Documents</a>
+		  <a class="dropdown-item" href="/namespaces.html">Namespaces</a>
+		  <a class="dropdown-item" href="/standards.html">Standards</a>
+		  <div class="dropdown-divider"></div>
+		  <h6 class="dropdown-header">Technologies</h6>
+		  <a class="dropdown-item" href="/3d/index.html">3D Printing</a>
+		  <a class="dropdown-item" href="/ipp/everywhere.html">IPP Everywhere™</a>
+		  <a class="dropdown-item" href="/sm/model.html">PWG Semantic Model</a>
+		</div>
 	      </li>
-	      <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Workgroups <span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu">
-		  <li class="dropdown-header" role="presentation">Active Workgroups</li>
-		  <li><a href="/ids/">Imaging Device Security</a></li>
-		  <li><a href="/ipp/">Internet Printing Protocol</a></li>
-		  <li class="divider"></li>
-		  <li class="dropdown-header" role="presentation">Inactive Workgroups</li>
-		  <li><a href="/cloud/">Cloud Imaging Model</a></li>
-		  <li><a href="/sm/">Semantic Model</a></li>
-		  <li><a href="/wims/">Workgroup for Imaging Management Solutions</a></li>
-		</ul>
+	      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgWGContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Workgroups</a>
+		<div class="dropdown-menu" aria-labelledby="pwgWGContent">
+		  <h6 class="dropdown-header">Active Workgroups</h6>
+		  <a class="dropdown-item" href="/ids/index.html">Imaging Device Security</a>
+		  <a class="dropdown-item" href="/ipp/index.html">Internet Printing Protocol</a>
+		  <div class="dropdown-divider"></div>
+		  <h6 class="dropdown-header">Inactive Workgroups</h6>
+		  <a class="dropdown-item" href="/cloud/index.html">Cloud Imaging Model</a>
+		  <a class="dropdown-item" href="/sm/index.html">Semantic Model</a>
+		  <a class="dropdown-item" href="/wims/index.html">Workgroup for Imaging Management Solutions</a>
+		</div>
 	      </li>
+	      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="pwgProjContent" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Github Projects</a>
+		<div class="dropdown-menu" aria-labelledby="pwgProjContent">
+		  <a class="dropdown-item" href="/github.html">All Projects</a>
+		  <div class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="/ippeveselfcert/index.html">IPP Everywhere™ Printer Self-Certification</a>
+		  <a class="dropdown-item" href="/ippregistry/index.html">IPP Registry</a>
+		  <a class="dropdown-item" href="/ippsample/index.html">IPP Sample Code</a>
+		  <a class="dropdown-item" href="/pwg-books/index.html">PWG Books</a>
+		</div>
+	      </li>
+<!--	      <li class="nav-item"><a class="nav-link" href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search</a></li>-->
 	    </ul>
 	  </div>
+	</nav>
+      </header>
+      <div class="container-fluid" style="background: white;">
+	<div class="row pwg-panel pwg-base">
+	  <div class="col-md-12 col-sm-12">
+            <xsl:apply-templates select="iana:title" />
+	  </div>
 	</div>
-      </nav>
-      <div id="pwg-body">
-	<div id="pwg-content">
-	  <xsl:apply-templates select="iana:title" />
-	  <xsl:if test="iana:created|iana:updated|iana:registration_rule|iana:expert|iana:description|iana:note|iana:xref|iana:record">
-	    <dl>
-	      <xsl:apply-templates select="iana:created" />
-	      <xsl:apply-templates select="iana:updated" />
-	      <xsl:apply-templates select="iana:registration_rule" />
-	      <xsl:apply-templates select="iana:expert" />
-	      <xsl:apply-templates select="iana:description" />
-	      <xsl:call-template name="iana:references"/>
-	      <xsl:apply-templates select="iana:note" />
-	      <xsl:call-template name="iana:formats"/>
-	    </dl>
-	  </xsl:if>
-	  <xsl:if test="iana:registry and not(iana:file)">
-	    <xsl:choose>
-	      <xsl:when test="count(iana:registry/iana:title) = 0">
-	      </xsl:when>
-	      <xsl:when test="count(iana:registry/iana:title) = 1">
-		<p><b>Registry included below</b></p>
-	      </xsl:when>
-	      <xsl:otherwise>
-		<p><b>Registries included below</b></p>
-	      </xsl:otherwise>
-	    </xsl:choose>
-	    <xsl:call-template name="table-of-contents"/>
-	  </xsl:if>
-	  <xsl:if test="iana:pagination/@page_cnt > 1 or iana:pagination/@search">
-	    <form method="get">
-	      <xsl:attribute name="action"><xsl:value-of select="iana:pagination/iana:url"/></xsl:attribute>
-	      <input name="search" size="18" type="text">
-		<xsl:attribute name="value"><xsl:value-of select="iana:pagination/@search"/></xsl:attribute>
-	      </input>
-	      <input value="Search" type="submit"/>
-	    </form>
-	  </xsl:if>
-	  <xsl:if test = "iana:record"><xsl:call-template name="iana:records" /></xsl:if>
-	  <xsl:if test = "iana:file"><h2>Files</h2><xsl:call-template name="iana:files" /></xsl:if>
-	  <xsl:apply-templates select="iana:registry" />
-	  <xsl:apply-templates select="iana:people"/>
-	  <xsl:call-template name="iana:footnotes"/>
+	<div class="row pwg-panel">
+	  <div class="col-md-12 col-sm-12">
+	    <xsl:if test="iana:created|iana:updated|iana:registration_rule|iana:expert|iana:description|iana:note|iana:xref|iana:record">
+	      <dl>
+		<xsl:apply-templates select="iana:created" />
+		<xsl:apply-templates select="iana:updated" />
+		<xsl:apply-templates select="iana:registration_rule" />
+		<xsl:apply-templates select="iana:expert" />
+		<xsl:apply-templates select="iana:description" />
+		<xsl:call-template name="iana:references"/>
+		<xsl:apply-templates select="iana:note" />
+		<xsl:call-template name="iana:formats"/>
+	      </dl>
+	    </xsl:if>
+	    <xsl:if test="iana:registry and not(iana:file)">
+	      <xsl:choose>
+		<xsl:when test="count(iana:registry/iana:title) = 0">
+		</xsl:when>
+		<xsl:when test="count(iana:registry/iana:title) = 1">
+		  <p><b>Registry included below</b></p>
+		</xsl:when>
+		<xsl:otherwise>
+		  <p><b>Registries included below</b></p>
+		</xsl:otherwise>
+	      </xsl:choose>
+	      <xsl:call-template name="table-of-contents"/>
+	    </xsl:if>
+	    <xsl:if test="iana:pagination/@page_cnt > 1 or iana:pagination/@search">
+	      <form method="get">
+		<xsl:attribute name="action"><xsl:value-of select="iana:pagination/iana:url"/></xsl:attribute>
+		<input name="search" size="18" type="text">
+		  <xsl:attribute name="value"><xsl:value-of select="iana:pagination/@search"/></xsl:attribute>
+		</input>
+		<input value="Search" type="submit"/>
+	      </form>
+	    </xsl:if>
+	    <xsl:if test = "iana:record"><xsl:call-template name="iana:records" /></xsl:if>
+	    <xsl:if test = "iana:file"><h2>Files</h2><xsl:call-template name="iana:files" /></xsl:if>
+	    <xsl:apply-templates select="iana:registry" />
+	    <xsl:apply-templates select="iana:people"/>
+	    <xsl:call-template name="iana:footnotes"/>
+	  </div>
 	</div>
       </div>
-      <div id="pwg-footer">
-	<div id="pwg-footer-body">Comments are owned by the poster. All other material is Copyright &#x00a9; 2001-2018 The Printer Working Group. All rights reserved. IPP Everywhere, the IPP Everywhere logo, and the PWG logo are trademarks of the IEEE-ISTO.<br />
-      <a href="/about.html">About the PWG</a> &#x00b7; <a href="https://ieee-isto.org/privacy-policy/">Privacy Policy</a> &#x00b7; <a href="mailto:webmaster@pwg.org">PWG Webmaster</a></div>
-      </div>
-
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="/dynamo/resources/pwg.js"></script>
-      <script type="text/javascript" src="/dynamo/resources/pwg-cookie-notice.js"></script>
+      <footer class="container-fluid">
+	Copyright © 2016-2019 by The ISTO Printer Working Group. IPP Everywhere, the IPP Everywhere logo, and the PWG logo are trademarks of the IEEE-ISTO.<br />
+	<a href="/about.html">About the PWG</a>
+	•
+	<a href="https://ieee-isto.org/privacy-policy/">Privacy Policy</a>
+	•
+	<a href="mailto:webmaster@pwg.org">PWG Webmaster</a>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       <!-- IE insists on having <script ...></script>, not <script .../> when it
       displays XML converted on the fly using XSLT. -->
       <script type="text/javascript" src="sort.js"></script>

@@ -149,7 +149,7 @@
             noticeStyle = notice.style;
 
         notice.className = 'alert alert-dark alert-dismissible';
-        notice.innerHTML = message + '&nbsp;';
+        notice.innerHTML = message + '&#160;';
         notice.setAttribute('id', 'cookieNotice');
 
         noticeStyle.position = 'fixed';
