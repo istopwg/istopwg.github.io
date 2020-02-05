@@ -2,6 +2,7 @@
 title: IPP Everywhere&trade; Printer Self-Certification Tools
 layout: project-lite
 project: ippeveselfcert
+project-logo: ippeveselfcert.png
 lead: Tools for certifying printers against the IPP Everywhere&trade; standard.
 ---
 
@@ -17,13 +18,14 @@ a.nav-link.active {
   border-bottom: rgb(222,226,230) solid 1px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  min-height: 400px;
+  min-height: 500px;
   padding: 20px;
 }
 --></style>
 
 <ul class="nav nav-tabs">
   <li class="nav-item"><a class="nav-link active" id="general-tab" data-toggle="tab" role="tab" aria-controls="general" aria-selected="true" href="#general">General Info</a></li>
+  <li class="nav-item"><a class="nav-link" id="raster-tab" data-toggle="tab" role="tab" aria-controls="raster" href="#raster">PWG Raster Files</a></li>
   <li class="nav-item"><a class="nav-link" id="windows-tab" data-toggle="tab" role="tab" aria-controls="windows" href="#windows">Windows&reg;</a></li>
   <li class="nav-item"><a class="nav-link" id="macos-tab" data-toggle="tab" role="tab" aria-controls="macos" href="#macos">macOS&reg;</a></li>
   <li class="nav-item"><a class="nav-link" id="rhel-tab" data-toggle="tab" role="tab" aria-controls="rhel" href="#rhel">RHEL</a></li>
@@ -39,6 +41,11 @@ a.nav-link.active {
     <blockquote>Note: Tests are intended to be run on an isolated network, or at least when no other users are printing using the target printer. Otherwise the test scripts will fail randomly.</blockquote>
 
 
+    <h2>Support</h2>
+
+    <p>The <em>ippeveselfcert@pwg.org</em> mailing list is used to discuss IPP Everywhere&trade; Printer Self-Certification. You can subscribe and view the list archives <a href="https://www.pwg.org/mailman/listinfo/ippeveselfcert">here</a>. Issues found in the tools should be reported using the <a href="https://github.com/istopwg/ippeveselfcert/issues">Github issues page</a>.</p>
+  </div>
+  <div class="tab-pane fade" id="raster" role="tabpanel" aria-labelledby="raster-tab">
     <h2>PWG Raster Files</h2>
 
     <p>The PWG has generated PWG Raster document files for the self-certification tools in several resolutions:</p>
@@ -51,12 +58,7 @@ a.nav-link.active {
       <li><a href="https://ftp.pwg.org/pub/pwg/ipp/examples/pwg-raster-samples-600dpi-20180607.zip">600dpi</a></li>
       <li><a href="https://ftp.pwg.org/pub/pwg/ipp/examples/pwg-raster-samples-720dpi-20180607.zip">720dpi</a></li>
     </ul>
-    <p>Please <a href="https://github.com/istopwg/ippeveselfcert/issues">file an issue on the Github project page</a> if you require raster files at a different resolution.</p>
-
-
-    <h2>Support</h2>
-
-    <p>The <em>ippeveselfcert@pwg.org</em> mailing list is used to discuss IPP Everywhere&trade; Printer Self-Certification. You can subscribe and view the list archives <a href="https://www.pwg.org/mailman/listinfo/ippeveselfcert">here</a>. Issues found in the tools should be reported using the <a href="https://github.com/istopwg/ippeveselfcert/issues">Github issues page</a>.</p>
+    <p>Please <a href="https://github.com/istopwg/ippeveselfcert/issues/new">file an issue on the Github project page</a> if you require raster files at a different resolution.</p>
   </div>
   <div class="tab-pane fade" id="windows" role="tabpanel" aria-labelledby="windows-tab">
     <h2>Running the Self-Certification Tools on Windows&reg; 7 and Higher</h2>
@@ -83,7 +85,7 @@ cd "C:\Program Files\IPP Everywhere Printer Self-Certification Tools"
 .\ippevesubmit "<em>Printer Name</em>"
 </pre>
 
-    <p>Proceed to the <a href="#submitting">Submitting Results</a> instructions to submit the JSON file.</p>
+    <p>Proceed to the <a href="#submitting" onclick="$('#submitting-tab').tab('show');">Submitting Results</a> instructions to submit the JSON file.</p>
   </div>
   <div class="tab-pane fade" id="macos" role="tabpanel" aria-labelledby="macos-tab">
     <h2>Running the Self-Certification Tools on macOS&reg; 10.10 and Higher</h2>
@@ -108,7 +110,7 @@ cd <em>/path/to/sw-ippeveselfcert10-20200204</em>
 ./ippevesubmit "<em>Printer Name</em>"
 </pre>
 
-    <p>Proceed to the <a href="#submitting">Submitting Results</a> instructions to submit the JSON file.</p>
+    <p>Proceed to the <a href="#submitting" onclick="$('#submitting-tab').tab('show');">Submitting Results</a> instructions to submit the JSON file.</p>
   </div>
   <div class="tab-pane fade" id="rhel" role="tabpanel" aria-labelledby="rhel-tab">
     <h2>Running the Self-Certification Tools on Red Hat Enterprise Linux 7 and Higher</h2>
@@ -133,7 +135,7 @@ cd <em>/path/to/sw-ippeveselfcert10-20200204</em>
 ./ippevesubmit "<em>Printer Name</em>"
 </pre>
 
-    <p>Proceed to the <a href="#submitting">Submitting Results</a> instructions to submit the JSON file.</p>
+    <p>Proceed to the <a href="#submitting" onclick="$('#submitting-tab').tab('show');">Submitting Results</a> instructions to submit the JSON file.</p>
   </div>
   <div class="tab-pane fade" id="ubuntu" role="tabpanel" aria-labelledby="ubuntu-tab">
     <h2>Running the Self-Certification Tools on Ubuntu 18.04 and Higher</h2>
@@ -158,7 +160,7 @@ cd <em>/path/to/sw-ippeveselfcert10-20200204</em>
 ./ippevesubmit "<em>Printer Name</em>"
 </pre>
 
-    <p>Proceed to the <a href="#submitting">Submitting Results</a> instructions to submit the JSON file.</p>
+    <p>Proceed to the <a href="#submitting" onclick="$('#submitting-tab').tab('show');">Submitting Results</a> instructions to submit the JSON file.</p>
   </div>
   <div class="tab-pane fade" id="submitting" role="tabpanel" aria-labelledby="submitting-tab">
     <h2>Submitting Your Self-Certification Results</h2>

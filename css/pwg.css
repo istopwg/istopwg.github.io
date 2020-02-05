@@ -119,6 +119,7 @@ pre, p.summary {
   padding: 40px 40px 30px;
 }
 .pwg-logo { float: right; height: 320px; margin-left: 20px; }
+.pwg-logo-xs { float: right; height: 80px; margin-left: 10px; }
 .pwg-logo-sm { float: right; height: 160px; margin-left: 20px; }
 .pwg-logo-md { float: right; height: 240px; margin-left: 20px; }
 .pwg-panel { background: white; font-size: 125%; margin: 0px -20px; padding: 30px 10px; }
