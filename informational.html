@@ -6,64 +6,65 @@ layout: bare
 <div class="row pwg-panel pwg-base">
   <div class="col-md-12 col-sm-12">
     <h1>Informational Documents</h1>
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a class="nav-link" href="#BESTPRACTICES" role="button">Best Practices</a></li>
-      <li class="nav-item"><a class="nav-link" href="#REQUIREMENTS" role="button">Requirements Documents</a></li>
-      <li class="nav-item"><a class="nav-link" href="#PRESENTATIONS" role="button">IEEE-ISTO Presentations</a></li>
-    </ul>
   </div>
 </div>
 <div class="row pwg-panel">
-  <div class="col-md-12 col-sm-12">
-    <h2 id="BESTPRACTICES">Best Practices</h2>
-
-    <h3>PWG 5199.10-2019: IPP Authentication Methods v1.0 <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-ippauth10-20190816-5199.10.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-ippauth10-20190816-5199.10.docx">DOCX</a></h3>
-    <p>This Best Practice document provides implementation guidance on how to best integrate various authentication mechanisms used over IPP's HTTP and HTTPS transports into IPP protocol exchanges when printer access or print feature policy requires authorization.</p>
-
-    <h3>PWG Safe G-Code Subset for 3D Printing v1.0 <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-pwgsafegcode10-20190604.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-pwgsafegcode10-20190604.docx">DOCX</a></h3>
-    <p>This document defines a "safe" subset of G-code for use in 3D printing with IPP along with the capabilities and parameters needed to allow a client to generate G-code compatible with the printer.</p>
-
-    <h3>PWG Mapping CIP4 JDF to PWG Job Ticket v1.0 (JDFMAP) <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-smjdfmap10-20170828.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-smjdfmap10-20170828.docx">DOCX</a></h3>
-    <p>For interoperability between job ticket-based printing systems, this Best Practices document defines a recommended mapping from XML objects and attributes in the CIP4 Job Definition Format [CIP4JDF] to XML elements in the PWG Print Job Ticket and Associated Capabilities [PWG5108.7].</p>
-
-    <h3>PWG 3D Print Job Ticket and Associated Capabilities v1.0 (PJT3D) <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-smpjt3d10-20170818.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-smpjt3d10-20170818.docx">DOCX</a></h3>
-    <p>This document describes the PWG Semantic Model Print3D service schema for embedded Job Tickets. The schema is based on the IPP 3D Printing Extensions v1.0 (3D) and suitable for data exchange and embedding within common 3D file formats such as 3MF and 3D PDF documents so that user intent is preserved regardless of the transport or workflow used.</p>
-
-    <h3>PWG Best Practices for Use of the RepertoireSupported Element <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-crrepsup10-20040201.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-crrepsup10-20040201.html">HTML</a></h3>
-    <p>In traditional printing environments, clients rely on font downloads when they are not sure a given character is embedded in the printer. As printing moves to small clients, downloading may not be an option and clients have a need to know what characters are available in a given device.</p>
-    <p>There are many published named character repertoires, and a small client will not know about them all.</p>
-    <p>[RS] describes the syntax and semantics for the Semantic Model element "RepertoireSupported". The current document describes Best Practices for the use of that element, in order to maximize interoperability between client devices and printers.</p>
-    <p>The reader of this document should be familiar with the terminology and concepts in [RS].</p>
+  <div class="col-md-3 col-sm-12">
+    <nav id="informational" class="navbar navbar-light bg-light">
+      <nav class="nav nav-pills flex-column">
+	<a class="nav-link" href="#best-practices">Best Practices</a>
+	<a class="nav-link" href="#requirements">Requirements Documents</a>
+	<a class="nav-link" href="#presentations">IEEE-ISTO Presentations</a>
+      </nav>
+    </nav>
   </div>
-</div>
-<div class="row pwg-panel pwg-alt-0">
-  <div class="col-md-12 col-sm-12">
-    <h2 id="REQUIREMENTS">Requirements Documents</h2>
+  <div class="col-md-9 col-sm-12">
+    <div data-spy="scroll" data-target="#informational" data-offset="0">
+      <h2 id="best-practices">Best Practices</h2>
 
-    <h3>PWG IPP Fax Project: IPP Fax Requirements <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/req-ifxreq10-20040204.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/req-ifxreq10-20040204.doc">DOC</a></h3>
-    <p>This document captures the requirements for IPP Fax, both the transport and the document format. This document assumes that the reader is familiar with IPP 1.1.</p>
+      <h3>PWG 5199.10-2019: IPP Authentication Methods v1.0 <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-ippauth10-20190816-5199.10.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-ippauth10-20190816-5199.10.docx">DOCX</a></h3>
+      <p>This Best Practice document provides implementation guidance on how to best integrate various authentication mechanisms used over IPP's HTTP and HTTPS transports into IPP protocol exchanges when printer access or print feature policy requires authorization.</p>
 
-    <h3>PWG Print Service Interface (PSI) Requirements <a class="badge badge-primary"  href="https://ftp.pwg.org/pub/pwg/informational/req-psireq10-20040212.pdf">PDF</a> <a class="badge badge-secondary"  href="https://ftp.pwg.org/pub/pwg/informational/req-psireq10-20040212.doc">DOC</a></h3>
-    <p>The Print Service Interface is the set of interfaces and methods that enable a Client such as a Printer, a Mobile Device, Web Portal, or a service to set up and invoke a print job from a Print Service. The Print Service may be used to resolve and access the information to be printed.</p>
+      <h3>PWG Safe G-Code Subset for 3D Printing v1.0 <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-pwgsafegcode10-20190604.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-pwgsafegcode10-20190604.docx">DOCX</a></h3>
+      <p>This document defines a "safe" subset of G-code for use in 3D printing with IPP along with the capabilities and parameters needed to allow a client to generate G-code compatible with the printer.</p>
 
-    <h3>PWG Multifunction Device Service Model Requirements <a class="badge badge-primary"  href="https://ftp.pwg.org/pub/pwg/informational/req-mfdreq10-20100901.pdf">PDF</a> <a class="badge badge-secondary"  href="https://ftp.pwg.org/pub/pwg/informational/req-mfdreq10-20100901.doc">DOC</a></h3>
-    <p>The Multifunction Device Service Model represents an abstraction of the characteristics, capabilities, and interfaces of each of the imaging services potentially provided by a Multifunction Device (MFD), as they are accessible to an outside client. The effort to model these services as a group and the associated effort in representing these models in a MFD Semantic Model is intended to highlight the commonality in the elements of these services while preserving the distinct functions of each service. The ultimate objective is to exploit the commonality to provide a consistent interface to services that have evolved in different environments and under different circumstances, but now are typically executed in the same device and used in the same environment.</p>
-    <p>This document provides the rationale and summarizes the requirements for the modeling activity.</p>
-  </div>
-</div>
-<div class="row pwg-panel pwg-alt-1">
-  <div class="col-md-12 col-sm-12">
-    <h2 id="PRESENTATIONS">IEEE-ISTO Presentations</h2>
+      <h3>PWG Mapping CIP4 JDF to PWG Job Ticket v1.0 (JDFMAP) <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-smjdfmap10-20170828.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-smjdfmap10-20170828.docx">DOCX</a></h3>
+      <p>For interoperability between job ticket-based printing systems, this Best Practices document defines a recommended mapping from XML objects and attributes in the CIP4 Job Definition Format [CIP4JDF] to XML elements in the PWG Print Job Ticket and Associated Capabilities [PWG5108.7].</p>
 
-    <p>Additional information about our program with the IEEE-ISTO organization can be found in the following material:</p>
+      <h3>PWG 3D Print Job Ticket and Associated Capabilities v1.0 (PJT3D) <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-smpjt3d10-20170818.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-smpjt3d10-20170818.docx">DOCX</a></h3>
+      <p>This document describes the PWG Semantic Model Print3D service schema for embedded Job Tickets. The schema is based on the IPP 3D Printing Extensions v1.0 (3D) and suitable for data exchange and embedding within common 3D file formats such as 3MF and 3D PDF documents so that user intent is preserved regardless of the transport or workflow used.</p>
 
-    <ol>
-      <li><a href="/chair/presentations/isto1.pdf">Press release announcing ISTO</a></li>
-      <li><a href="/chair/presentations/isto2.pdf">Standards Bearer article on ISTO</a></li>
-      <li><a href="/chair/presentations/isto3.pdf">Medical Device Communications Industry Group (A Program of the ISTO) Announcement</a></li>
-      <li><a href="/chair/presentations/isto4.pdf">ISTO Presentation</a></li>
-      <li>Presentation to PWG Plenary <a href="/chair/presentations/041499_pwg.pdf">(slides)</a> <a href="/chair/presentations/041499_pwgplenary.pdf">(script)</a></li>
-      <li><a href="/chair/pwg_press_release_final_092399.pdf">Press release announcing the PWG/ISTO Alliance</a></li>
-    </ol>
+      <h3>PWG Best Practices for Use of the RepertoireSupported Element <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/bp-crrepsup10-20040201.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/bp-crrepsup10-20040201.html">HTML</a></h3>
+      <p>In traditional printing environments, clients rely on font downloads when they are not sure a given character is embedded in the printer. As printing moves to small clients, downloading may not be an option and clients have a need to know what characters are available in a given device.</p>
+      <p>There are many published named character repertoires, and a small client will not know about them all.</p>
+      <p>[RS] describes the syntax and semantics for the Semantic Model element "RepertoireSupported". The current document describes Best Practices for the use of that element, in order to maximize interoperability between client devices and printers.</p>
+      <p>The reader of this document should be familiar with the terminology and concepts in [RS].</p>
+
+
+      <h2 id="requirements">Requirements Documents</h2>
+
+      <h3>PWG IPP Fax Project: IPP Fax Requirements <a class="badge badge-primary" href="https://ftp.pwg.org/pub/pwg/informational/req-ifxreq10-20040204.pdf">PDF</a> <a class="badge badge-secondary" href="https://ftp.pwg.org/pub/pwg/informational/req-ifxreq10-20040204.doc">DOC</a></h3>
+      <p>This document captures the requirements for IPP Fax, both the transport and the document format. This document assumes that the reader is familiar with IPP 1.1.</p>
+
+      <h3>PWG Print Service Interface (PSI) Requirements <a class="badge badge-primary"  href="https://ftp.pwg.org/pub/pwg/informational/req-psireq10-20040212.pdf">PDF</a> <a class="badge badge-secondary"  href="https://ftp.pwg.org/pub/pwg/informational/req-psireq10-20040212.doc">DOC</a></h3>
+      <p>The Print Service Interface is the set of interfaces and methods that enable a Client such as a Printer, a Mobile Device, Web Portal, or a service to set up and invoke a print job from a Print Service. The Print Service may be used to resolve and access the information to be printed.</p>
+
+      <h3>PWG Multifunction Device Service Model Requirements <a class="badge badge-primary"  href="https://ftp.pwg.org/pub/pwg/informational/req-mfdreq10-20100901.pdf">PDF</a> <a class="badge badge-secondary"  href="https://ftp.pwg.org/pub/pwg/informational/req-mfdreq10-20100901.doc">DOC</a></h3>
+      <p>The Multifunction Device Service Model represents an abstraction of the characteristics, capabilities, and interfaces of each of the imaging services potentially provided by a Multifunction Device (MFD), as they are accessible to an outside client. The effort to model these services as a group and the associated effort in representing these models in a MFD Semantic Model is intended to highlight the commonality in the elements of these services while preserving the distinct functions of each service. The ultimate objective is to exploit the commonality to provide a consistent interface to services that have evolved in different environments and under different circumstances, but now are typically executed in the same device and used in the same environment.</p>
+      <p>This document provides the rationale and summarizes the requirements for the modeling activity.</p>
+
+      <h2 id="presentations">IEEE-ISTO Presentations</h2>
+
+      <p>Additional information about our program with the IEEE-ISTO organization can be found in the following material:</p>
+
+      <ol>
+	<li><a href="/chair/presentations/isto1.pdf">Press release announcing ISTO</a></li>
+	<li><a href="/chair/presentations/isto2.pdf">Standards Bearer article on ISTO</a></li>
+	<li><a href="/chair/presentations/isto3.pdf">Medical Device Communications Industry Group (A Program of the ISTO) Announcement</a></li>
+	<li><a href="/chair/presentations/isto4.pdf">ISTO Presentation</a></li>
+	<li>Presentation to PWG Plenary <a href="/chair/presentations/041499_pwg.pdf">(slides)</a> <a href="/chair/presentations/041499_pwgplenary.pdf">(script)</a></li>
+	<li><a href="/chair/pwg_press_release_final_092399.pdf">Press release announcing the PWG/ISTO Alliance</a></li>
+      </ol>
+    </div>
   </div>
 </div>
