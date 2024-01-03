@@ -34,7 +34,7 @@ layout: bare
     <h2>Recent News</h2>
 
     {% for post in site.posts offset: 0 limit: 8 %}
-    <h3><small class="float-right text-muted">{{ post.date | date_to_string }}</small>{{post.title}}</h3>
+    <h3><small class="float-end text-muted">{{ post.date | date_to_string }}</small>{{post.title}}</h3>
     {{ post.excerpt }}
     {% if post.excerpt != post.content %}
     <p><a class="btn btn-secondary btn-sm" href="{{ post.url }}">Read More</a></p>

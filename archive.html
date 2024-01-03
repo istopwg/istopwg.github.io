@@ -4,7 +4,7 @@ layout: default
 ---
 
 {% for post in site.posts %}
-<h2><small class="float-right text-muted">{{ post.date | date_to_string }}</small>{{post.title}}</h2>
+<h2><small class="float-end text-muted">{{ post.date | date_to_string }}</small>{{post.title}}</h2>
 {{ post.excerpt }}
 {% if post.excerpt != post.content %}
 <p><a class="btn btn-secondary btn-sm" href="{{ post.url }}">Read More</a></p>
