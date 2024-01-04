@@ -176,8 +176,7 @@
         var dismissButton = document.createElement('button');
 
         // Dismiss button
-        dismissButton.className = 'close';
-        dismissButton.innerHTML = '&times;';
+        dismissButton.className = 'btn-close';
 
         return dismissButton;
 

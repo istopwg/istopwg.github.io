@@ -7,7 +7,7 @@ project: ippsample
 
 <h2 id="about">About the IPP Sample Code</h2>
 
-<p>The <code>ippsample</code> project provides sample, non-production-ready  implementations of IPP Clients, Printers, and Proxies. It makes use of the <a href="https://github.com/OpenPrinting/libcups" target="_blank">CUPS Library v3</a> and <a href="https://github.com/michaelrsweet/pdfio" target="_blank">PDFio library</a> projects to provide low-level HTTP, IPP, and PDF support.  The <code>ippserver</code> and <code>ipp3dprinter</code> code was also inspired by the original CUPS <code>ippeveprinter</code> source code. The project also includes two transform programs, <code>ipptransform</code> for 2D printing and <code>ipptransform3d</code> for 3D printing, as well as a "lint" program (<code>ippdoclint</code>) for validating document data in automated test environments.</p>
+<p>The <code>ippsample</code> project provides sample, non-production-ready implementations of IPP Clients, Printers, and Proxies. It makes use of the <a href="https://github.com/OpenPrinting/libcups" target="_blank">CUPS Library v3</a> and <a href="https://github.com/michaelrsweet/pdfio" target="_blank">PDFio library</a> projects to provide low-level HTTP, IPP, and PDF support.  The <code>ippserver</code> and <code>ipp3dprinter</code> code was also inspired by the original CUPS <code>ippeveprinter</code> source code. The project also includes the <code>ipptransform3d</code> transform program for 3D printing to G-code printers as well as a "lint" program (<code>ippdoclint</code>) for validating document data in automated test environments.</p>
 
 <p>The server implements most IPP standards including <a href="https://www.pwg.org/ipp/everywhere.html" target="_blank">IPP Everywhere&trade;</a> and includes transform support for 2D and 3D printing. A beta snap is available for Linux systems.</p>
 
@@ -18,6 +18,8 @@ project: ippsample
 
 
 <h2 id="programs">Programs</h3>
+
+<p>The following programs are provided in addition to the <code>ippfind</code>, <code>ipptool</code>, and <code>ipptransform</code> programs included with the CUPS Library v3 project.</p>
 
 <h3 id="ippdoclint">ippdoclint <a class="badge badge-primary" href="ippdoclint.html">Man Page</a></h3>
 
@@ -31,10 +33,6 @@ project: ippsample
 
 <p>The <code>ippserver</code> program implements most IPP standards and is commonly used for prototyping and automated testing. It provides a generic IPP Printer interface that allows you to share printers locally or using the IPP Shared Infrastructure Extensions. Printers can be configured to use authentication and/or to provide transforms using the included or third-party programs. A scriptable web interface allows for a variety of automated testing opportunities.</p>
 
-<h3 id="ipptransform">ipptransform <a class="badge badge-primary" href="ipptransform.html">Man Page</a></h3>
-
-<p>The <code>ipptransform</code> program is a generic file conversion utility that is used primarily with ippserver to support rasterization of JPEG and PDF documents for IPP Everywhere and HP PCL printers.</p>
-
 <h3 id="ipptransform3d">ipptransform3d <a class="badge badge-primary" href="ipptransform3d.html">Man Page</a></h3>
 
 <p>The <code>ipptransform3d</code> program is a generic file conversion utility that is used primarily with ippserver to support slicing of STL and 3MF documents for 3D printers connected via USB.</p>
@@ -42,7 +40,7 @@ project: ippsample
 
 <h2 id="legal">Legal Stuff</h2>
 
-<p>Copyright © 2014-2023 by the IEEE-ISTO Printer Working Group.<br>
+<p>Copyright © 2014-2024 by the IEEE-ISTO Printer Working Group.<br>
 Copyright © 2007-2019 by Apple Inc.<br>
 Copyright © 1997-2007 by Easy Software Products.</p>
 
