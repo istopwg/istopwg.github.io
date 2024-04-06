@@ -24,7 +24,7 @@ lead: Tools for maintaining the IPP-based registries, schema, and strings files.
 
 <h3>register</h3>
 
-<p>./register [-f] [-o newfile.xml] [-t "Standard Title"] [-x "Standard URL"] filename.xml [regtext.txt]</p>
+<p>./register [-f] [-o NEWFILE.xml] [-t "STANDARD TITLE"] [-x STANDARD-URL] FILENAME.xml [REGTEXT.txt]</p>
 
 <h4>Description</h4>
 
@@ -35,18 +35,18 @@ lead: Tools for maintaining the IPP-based registries, schema, and strings files.
 <dl class="row">
   <dt class="col-sm-3">-f</dt>
   <dd class="col-sm-9">Force writing of new file.</dd>
-  <dt class="col-sm-3">-o newfile.xml</dt>
+  <dt class="col-sm-3">-o NEWFILE.xml</dt>
   <dd class="col-sm-9">Specifies a new XML file to write to. By default <code>register</code> overwrites the original XML file.</dd>
-  <dt class="col-sm-3">-t "Standard Title"</dt>
+  <dt class="col-sm-3">-t "STANDARD TITLE"</dt>
   <dd class="col-sm-9">Specifies the title of the standard or reference to the template.</dd>
-  <dt class="col-sm-3">-x "Standard URL"</dt>
+  <dt class="col-sm-3">-x STANDARD-URL</dt>
   <dd class="col-sm-9">Specifies the URL for the standard or reference. Strings of the form "rfcNNNN" are also supported for RFCs.</dd>
 </dl>
 
 
 <h3>regtosm</h3>
 
-<p>./regtosm [-n namespace-url] [-v version] filename.xml output-directory</p>
+<p>./regtosm [-a ATTRIBUTE-LIST] [-n NAMESPACE-URL] [-s SERVICE-NAME] [-v VERSION] FILENAME.xml OUTPUT-DIRECTORY</p>
 
 <h4>Description</h4>
 
@@ -55,20 +55,20 @@ lead: Tools for maintaining the IPP-based registries, schema, and strings files.
 <h4>Options</h4>
 
 <dl class="row">
-  <dt class="col-sm-3">-a attribute-list</dt>
+  <dt class="col-sm-3">-a ATTRIBUTE-LIST</dt>
   <dd class="col-sm-9">Specifies a list of attributes to include in the service description. If not specified, all attributes are included.</dd>
-  <dt class="col-sm-3">-n namespace-url</dt>
+  <dt class="col-sm-3">-n NAMESPACE-URL</dt>
   <dd class="col-sm-9">Specifies the namespace URL to use in the generated schema. If not specified, a URL of the form "http://www.pwg.org/schemas/YYYY/MM/sm" is generated.</dd>
-  <dt class="col-sm-3">-s service-name</dt>
+  <dt class="col-sm-3">-s SERVICE-NAME</dt>
   <dd class="col-sm-9">Specifies the service name to use in the generated schema. If not specified, a service called "Print" is generated.</dd>
-  <dt class="col-sm-3">-v version</dt>
+  <dt class="col-sm-3">-v VERSION</dt>
   <dd class="col-sm-9">Specifies the version number to use in the generated schema. If not specified, a version of the form "2.9nnnnn" is generated, where "nnnnn" is the number of days since 1970.</dd>
 </dl>
 
 
 <h3>regtostrings</h3>
 
-<p>./regtostrings [ --po ] filename.xml >filename.strings</p>
+<p>./regtostrings [ --code ] [ --po ] FILENAME.xml >FILENAME.EXT</p>
 
 <h4>Description</h4>
 
@@ -77,6 +77,8 @@ lead: Tools for maintaining the IPP-based registries, schema, and strings files.
 <h4>Options</h4>
 
 <dl class="row">
+  <dt class="col-sm-3">--code</dt>
+  <dd class="col-sm-9">Specifies that C code should be generated instead of the default Apple .strings format.</dd>
   <dt class="col-sm-3">--po</dt>
   <dd class="col-sm-9">Specifies that the GNU gettext message catalog format should be generated instead of the default Apple .strings format.</dd>
 </dl>
@@ -84,7 +86,7 @@ lead: Tools for maintaining the IPP-based registries, schema, and strings files.
 
 <h2 id="legal">Legal Stuff</h2>
 
-<p>Copyright © 2018 by the IEEE-ISTO Printer Working Group.<br>
+<p>Copyright © 2018-2024 by the IEEE-ISTO Printer Working Group.<br>
 Copyright © 2008-2017 by Michael R Sweet.</p>
 
 <p>This software is provided under the terms of the Apache License, Version 2.0. A copy of this license can be found in the file <a href="https://github.com/istopwg/ippregistry/blob/master/LICENSE">LICENSE</a>. Additional legal information is provided in the file <a href="https://github.com/istopwg/ippregistry/blob/master/NOTICE">NOTICE</a>.</p>
