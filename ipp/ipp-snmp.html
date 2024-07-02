@@ -1,11 +1,8 @@
-﻿---
-title: IPP &mdash; SNMP Mappings
-layout: bare
+---
+title: IPP — SNMP Mappings
+layout: default
 ---
 
-<div class="row pwg-panel pwg-base">
-  <div class="col-md-12 col-sm-12">
-    <h1>IPP &mdash; SNMP Mappings</h1>
     <p>Single-valued SNMP properties are typically mapped to an IPP Printer Description or Printer Status attribute with a similar name and syntax. The IPP attribute sometimes provides more information than the corresponding SNMP property - this is particularly true for the "printer-contact-col (collection)" and "printer-service-contact-col (collection)" attributes.</p>
     <p>Multi-valued SNMP tables are typically mapped to a pair of IPP Printer Status attributes - "printer-xxx (1setOf octetString(MAX))" and "printer-xxx-description (1setOf text(MAX))" - which supply the values and localized descriptions of each object, respectively. The "printer-xxx (1setOf octetString)" values contain delimited key value pairs of the form 'NAME=VALUE;...;NAME=VALUE;' that can be parsed by the IPP Client to obtain the original SNMP properties and values. The "printer-xxx-description (1setOf text(MAX))" values contain the corresponding xxxDescription property value transcoded to the IPP request character set which is typically UTF-8. The description attribute is omitted for the input and output tray tables since localization is available separately for IPP Job Template attributes and values.</p>
     <table class="table table-condensed table-striped standard" summary="IPP &mdash; SNMP Mappings">
@@ -114,39 +111,5 @@ layout: bare
           <td><a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc3805#page-107">prtMarkerColorantDescription</a><br>
           <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc3805#page-104">prtMarkerSupplyDescription</a></td>
         </tr>
-
-
-<!--        <tr>
-          <td><a target="_blank" href="">printer-</a> (1setOf octetString(MAX))</td>
-          <td><a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc">prt</a></td>
-        </tr>
-        <tr>
-          <td><a target="_blank" href="">printer--description</a> (1setOf text(MAX))</td>
-          <td><a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc">prt</a></td>
-        </tr>
-        <tr>
-          <td><a target="_blank" href="">printer-</a> (1setOf octetString(MAX))</td>
-          <td><a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc">prt</a></td>
-        </tr>
-        <tr>
-          <td><a target="_blank" href="">printer--description</a> (1setOf text(MAX))</td>
-          <td><a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc">prt</a></td>
-        </tr>
-        <tr>
-          <td><a target="_blank" href="">printer-</a> (1setOf octetString(MAX))</td>
-          <td><a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc">prt</a></td>
-        </tr>
-        <tr>
-          <td><a target="_blank" href="">printer--description</a> (1setOf text(MAX))</td>
-          <td><a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc">prt</a></td>
-        </tr>
-        <tr>
-          <td><a target="_blank" href="">printer-</a> (1setOf octetString(MAX))</td>
-          <td><a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc">prt</a></td>
-        </tr>
-        <tr>
-          <td><a target="_blank" href="">printer--description</a> (1setOf text(MAX))</td>
-          <td><a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc">prt</a></td>
-        </tr>-->
       </tbody>
     </table>
